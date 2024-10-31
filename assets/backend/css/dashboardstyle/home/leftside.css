@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root {
+--main-color-- :#232F43;
+--second-color-- : #EA9744;
+--hover-color-- : #FFFFFF17 ;
+--main-font-- : "Outfit", sans-serif !important;
+}
+* {
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+    font-size: 16px !important;
+}
+body {
+    font-family: var(--main-font--);
+    padding: 0;
+    margin: 0;
+}
+.container-fluid {
+    padding-left: 0;
+    margin-left: 0;
+}
+.left-side-menu {
+    background-color: var(--main-color--);
+    
+}
+.left-side-menu .leftbar-user {
+    padding: 50px 30px 30px 30px;
+}
+.left-side-menu .leftbar-user .leftbar-user-name {
+    font-family: var(--main-font--);
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 30px;
+}
+.left-side-menu .leftbar-user .leftbar-user-name-disc {
+    font-family: var(--main-font--);
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 24px;
+    text-align: left;
+}
+.left-side-menu .metismenu .side-nav-item-top .side-nav-link-top .dripicons-view-apps,
+.left-side-menu .metismenu .side-nav-item-top .side-nav-link-top .dashboard-name{
+    color: var(--second-color--) !important;
+}
+.left-side-menu .metismenu .side-nav-item-top {
+    font-size: 1rem !important;
+    border-left: 3px solid var(--second-color--);
+    background-color: var(--hover-color--);
+}
+.left-side-menu .metismenu .side-nav-item-top .side-nav-link{
+    display: block;
+    color: var(--second-color--) !important;
+}
+.left-side-menu .metismenu .side-nav-item-top .menu-arrow{
+    transform: rotate(360deg) !important;
+}
+.left-side-menu .metismenu .side-item a{
+    font-family: var(--main-font--);
+    color : #EBEDEF !important;
+    font-size: .8rem !important;
+    font-weight: 300;
+    line-height: 20px;
+
+}
+.left-side-menu .metismenu .side-item:hover .side-nav-link{
+    border-left: 3px solid var(--second-color--) !important;
+    color: var(--second-color--)!important;
+    background-color: var(--hover-color--);
+}

@@ -1,5 +1,5 @@
 <?php foreach($notifications->result_array() as $notification): ?>
-    <div class="dropdown-item notify-item cursor-pointer <?php if($notification['status'] == 0) echo 'unread' ?>">
+    <div class="dropdown-item notify-item cursor-pointer<?php if($notification['status'] == 0) echo 'unread' ?>">
         <?php if($notification['type'] == 'signup'): ?>
             <div class="notify-icon">
                 <img src="<?php echo $this->user_model->get_user_image_url($notification['from_user']); ?>" class="img-fluid rounded-circle" alt="User image" />
