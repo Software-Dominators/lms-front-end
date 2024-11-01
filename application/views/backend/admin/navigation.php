@@ -2,31 +2,31 @@
 $status_wise_courses = $this->crud_model->get_status_wise_courses();
 ?>
 <!-- ========== Left Sidebar Start ========== -->
-<div class="left-side-menu left-side-menu-detached">
-	<div class="leftbar-user">
+<div class="left-side-menu left-side-menu-detached position-static bg-dark">
+	<div class="leftbar-user text-center">
 		<a href="javascript: void(0);">
 			<img src="<?php echo $this->user_model->get_user_image_url($this->session->userdata('user_id')); ?>" alt="user-image" height="42" class="rounded-circle shadow-sm">
 			<?php
 			$admin_details = $this->user_model->get_all_user($this->session->userdata('user_id'))->row_array();
 			?>
-			<span class="leftbar-user-name"><?php echo $admin_details['first_name'] . ' ' . $admin_details['last_name']; ?></span>
+			<span class="leftbar-user-name text-white m-0 mt-2"><?php echo $admin_details['first_name'] . ' ' . $admin_details['last_name']; ?></span>
+			<span class=" leftbar-user-name-disc  text-white"><?php echo $admin_details['first_name'] . ' ' . $admin_details['last_name']; ?></span>
 		</a>
 	</div>
 
 	<!--- Sidemenu -->
 	<ul class="metismenu side-nav side-nav-light">
 
-		<li class="side-nav-title side-nav-item"><?php echo get_phrase('navigation'); ?></li>
-
-		<li class="side-nav-item <?php if ($page_name == 'dashboard') echo 'active'; ?>">
-			<a href="<?php echo site_url('admin/dashboard'); ?>" class="side-nav-link">
-				<i class="dripicons-view-apps"></i>
-				<span><?php echo get_phrase('dashboard'); ?></span>
+		<li class="side-nav-item side-nav-item-top <?php if ($page_name == 'dashboard') echo 'active'; ?>">
+			<a href="<?php echo site_url('admin/dashboard'); ?>" class="side-nav-link side-nav-link-top">
+				<i class="dripicons-view-apps fa-lg"></i>
+				<span class="dashboard-name"><?php echo get_phrase('dashboard'); ?></span>
+				<span class="menu-arrow"></span>
 			</a>
 		</li>
 
 		<?php if (has_permission('course')) : ?>
-			<li class="side-nav-item <?php if ($page_name == 'courses' || $page_name == 'course_add' || $page_name == 'course_edit' || $page_name == 'categories' || $page_name == 'category_add' || $page_name == 'category_edit' || $page_name == 'coupons' || $page_name == 'coupon_add' || $page_name == 'coupon_edit' || $page_name == 'add_bundle' || $page_name == 'manage_course_bundle' || $page_name == 'edit_bundle' || $page_name == 'active_bundle_subscription_report' || $page_name == 'expire_bundle_subscription_report' || $page_name == 'bundle_invoice') echo 'active'; ?>">
+			<li class="side-nav-item side-item <?php if ($page_name == 'courses' || $page_name == 'course_add' || $page_name == 'course_edit' || $page_name == 'categories' || $page_name == 'category_add' || $page_name == 'category_edit' || $page_name == 'coupons' || $page_name == 'coupon_add' || $page_name == 'coupon_edit' || $page_name == 'add_bundle' || $page_name == 'manage_course_bundle' || $page_name == 'edit_bundle' || $page_name == 'active_bundle_subscription_report' || $page_name == 'expire_bundle_subscription_report' || $page_name == 'bundle_invoice') echo 'active'; ?>">
 				<a href="javascript: void(0);" class="side-nav-link <?php if ($page_name == 'courses' || $page_name == 'course_add' || $page_name == 'course_edit' || $page_name == 'categories' || $page_name == 'category_add' || $page_name == 'category_edit' || $page_name == 'coupons' || $page_name == 'coupon_add' || $page_name == 'coupon_edit') : ?> active <?php endif; ?>">
 					<i class="dripicons-archive"></i>
 					<span> <?php echo get_phrase('courses'); ?> </span>
@@ -82,7 +82,7 @@ $status_wise_courses = $this->crud_model->get_status_wise_courses();
 
 		<!-- bootcamp addon -->
 		<?php if (addon_status('bootcamp')) : ?>
-			<li class="side-nav-item <?php if ($page_name == 'bootcamp_list' || $page_name == 'bootcamp_form' || $page_name == 'bootcamp_payment_invoice') : ?> active <?php endif; ?>">
+			<li class="side-nav-item side-item <?php if ($page_name == 'bootcamp_list' || $page_name == 'bootcamp_form' || $page_name == 'bootcamp_payment_invoice') : ?> active <?php endif; ?>">
 				<a href="javascript: void(0);" class="side-nav-link <?php if ($page_name == 'bootcamp_form' || $page_name == 'bootcamp_list' || $page_name == 'bootcamp_payment_invoice') : ?> active <?php endif; ?>">
 					<i class="dripicons-user-group"></i>
 					<span> <?php echo get_phrase('bootcamp'); ?> </span>
@@ -115,7 +115,7 @@ $status_wise_courses = $this->crud_model->get_status_wise_courses();
 
 		<!-- team training start -->
 		<?php if (addon_status('team_training')) : ?>
-			<li class="side-nav-item">
+			<li class="side-nav-item side-item">
 				<a href="javascript: void(0);" class="side-nav-link <?php if ($page_name == 'team_packages' || $page_name == 'team_package_add' || $page_name == 'team_package_edit'  || $page_name == 'team_package_purchase_history' || $page_name == 'teams-server-side' || $page_name == 'team-details-page') : ?> active <?php endif; ?>">
 					<i class="dripicons-document"></i>
 					<span> <?php echo get_phrase('team_training'); ?> </span>
@@ -144,7 +144,7 @@ $status_wise_courses = $this->crud_model->get_status_wise_courses();
 		<!-- team training end -->
 
 		<?php if (addon_status('tutor_booking')) : ?>
-			<li class="side-nav-item">
+			<li class="side-nav-item side-item">
 				<a href="javascript: void(0);" class="side-nav-link <?php if ($page_name == 'tutor_inactive_booking_list' || $page_name == 'tutor_schedule_list' || $page_name == 'tutor_inactive_schedule_list'  || $page_name == 'tutor_live_class_settings' || $page_name == 'booked_schedule_details' || $page_name == 'tutor_caregories' || $page_name == 'add_schedule' || $page_name == 'tutor_booking_list') : ?> active <?php endif; ?>">
 					<i class="dripicons-document"></i>
 					<span> <?php echo get_phrase('tutor_booking'); ?> </span>
@@ -170,7 +170,7 @@ $status_wise_courses = $this->crud_model->get_status_wise_courses();
 		<?php endif; ?>
 
 		<?php if (addon_status('ebook')) : ?>
-			<li class="side-nav-item">
+			<li class="side-nav-item side-item">
 				<a href="javascript: void(0);" class="side-nav-link <?php if ($page_name == 'all_ebooks' || $page_name == 'add_ebook' || $page_name == 'ebook_edit') : ?> active <?php endif; ?>">
 					<i class="dripicons-document"></i>
 					<span> <?php echo get_phrase('ebook'); ?> </span>
@@ -206,7 +206,7 @@ $status_wise_courses = $this->crud_model->get_status_wise_courses();
 		<?php endif; ?>
 
 		<?php if (has_permission('enrolment')) : ?>
-			<li class="side-nav-item <?php if ($page_name == 'enrol_history' || $page_name == 'enrol_student') : ?> active <?php endif; ?>">
+			<li class="side-nav-item side-item <?php if ($page_name == 'enrol_history' || $page_name == 'enrol_student') : ?> active <?php endif; ?>">
 				<a href="javascript: void(0);" class="side-nav-link <?php if ($page_name == 'enrol_history' || $page_name == 'enrol_student') : ?> active <?php endif; ?>">
 					<i class="dripicons-network-3"></i>
 					<span> <?php echo get_phrase('Enrollments'); ?> </span>
@@ -224,7 +224,7 @@ $status_wise_courses = $this->crud_model->get_status_wise_courses();
 		<?php endif; ?>
 
 		<?php if (has_permission('revenue')) : ?>
-			<li class="side-nav-item">
+			<li class="side-nav-item side-item">
 				<a href="javascript: void(0);" class="side-nav-link <?php if ($page_name == 'admin_revenue' || $page_name == 'instructor_revenue' || $page_name == 'purchase_history' || $page_name == 'invoice') : ?> active <?php endif; ?>">
 					<i class="dripicons-box"></i>
 					<span> <?php echo get_phrase('report'); ?> </span>
@@ -318,7 +318,7 @@ $status_wise_courses = $this->crud_model->get_status_wise_courses();
 		<?php endif; ?>
 
 		<?php if (has_permission('user')) : ?>
-			<li class="side-nav-item <?php if ($page_name == 'admins' || $page_name == 'admin_add' || $page_name == 'admin_edit' || $page_name == 'admin_permission' || $page_name == 'instructors' || $page_name == 'instructor_add' || $page_name == 'instructor_edit' || $page_name == 'instructor_payout' || $page_name == 'instructor_settings' || $page_name == 'application_list' || $page_name == 'users' || $page_name == 'user_add' || $page_name == 'user_edit') : ?> active <?php endif; ?>">
+			<li class="side-nav-item side-item <?php if ($page_name == 'admins' || $page_name == 'admin_add' || $page_name == 'admin_edit' || $page_name == 'admin_permission' || $page_name == 'instructors' || $page_name == 'instructor_add' || $page_name == 'instructor_edit' || $page_name == 'instructor_payout' || $page_name == 'instructor_settings' || $page_name == 'application_list' || $page_name == 'users' || $page_name == 'user_add' || $page_name == 'user_edit') : ?> active <?php endif; ?>">
 				<a href="javascript: void(0);" class="side-nav-link <?php if ($page_name == 'admins' || $page_name == 'admin_add' || $page_name == 'admin_edit' || $page_name == 'admin_permission' || $page_name == 'instructors' || $page_name == 'instructor_add' || $page_name == 'instructor_edit' || $page_name == 'instructor_payout' || $page_name == 'instructor_settings' || $page_name == 'application_list' || $page_name == 'users' || $page_name == 'user_add' || $page_name == 'user_edit') : ?> active <?php endif; ?>">
 					<i class="dripicons-user-group"></i>
 					<span> <?php echo get_phrase('users'); ?> </span>
@@ -393,7 +393,7 @@ $status_wise_courses = $this->crud_model->get_status_wise_courses();
 		<?php endif; ?>
 
 		<?php if (addon_status('offline_payment')) : ?>
-			<li class="side-nav-item">
+			<li class="side-nav-item side-item">
 				<a href="javascript: void(0);" class="side-nav-link <?php if ($page_name == 'offline_payment_pending' || $page_name == 'offline_payment_approve' || $page_name == 'offline_payment_suspended') : ?> active <?php endif; ?>">
 					<i class="dripicons-box"></i>
 					<span> <?php echo get_phrase('offline_payment'); ?></span>
@@ -420,7 +420,7 @@ $status_wise_courses = $this->crud_model->get_status_wise_courses();
 		<?php endif; ?>
 
 		<?php if (has_permission('messaging')) : ?>
-			<li class="side-nav-item">
+			<li class="side-nav-item side-item">
 				<a href="<?php echo site_url('admin/message'); ?>" class="side-nav-link <?php if ($page_name == 'message' || $page_name == 'message_new' || $page_name == 'message_read') echo 'active'; ?>">
 					<i class="dripicons-message"></i>
 					<span><?php echo get_phrase('message'); ?></span>
@@ -438,7 +438,7 @@ $status_wise_courses = $this->crud_model->get_status_wise_courses();
 
 
 		<?php if (has_permission('newsletter')) : ?>
-			<li class="side-nav-item <?php if ($page_name == 'subscribed_user' || $page_name == 'newsletters' || $page_name == 'newsletter_history') : ?> active <?php endif; ?>">
+			<li class="side-nav-item side-item <?php if ($page_name == 'subscribed_user' || $page_name == 'newsletters' || $page_name == 'newsletter_history') : ?> active <?php endif; ?>">
 				<a href="javascript: void(0);" class="side-nav-link <?php if ($page_name == 'subscribed_user' || $page_name == 'newsletters') : ?> active <?php endif; ?>">
 					<i class="far fa-envelope-open"></i>
 					<span> <?php echo get_phrase('Newsletter'); ?> </span>
@@ -457,7 +457,7 @@ $status_wise_courses = $this->crud_model->get_status_wise_courses();
 
 
 		<?php if (has_permission('contact')) : ?>
-			<li class="side-nav-item">
+			<li class="side-nav-item side-item">
 				<a href="<?php echo site_url('admin/contact'); ?>" class="side-nav-link <?php if ($page_name == 'contact') : ?> active <?php endif; ?>">
 					<i class="dripicons-user-id"></i>
 					<span><?php echo get_phrase('Contact'); ?></span>
@@ -471,7 +471,7 @@ $status_wise_courses = $this->crud_model->get_status_wise_courses();
 
 
 		<?php if (has_permission('blog')) : ?>
-			<li class="side-nav-item <?php if ($page_name == 'blog' || $page_name == 'blog_add' || $page_name == 'blog_edit' || $page_name == 'blog_category' || $page_name == 'blog_settings') : ?> active <?php endif; ?>">
+			<li class="side-nav-item side-item<?php if ($page_name == 'blog' || $page_name == 'blog_add' || $page_name == 'blog_edit' || $page_name == 'blog_category' || $page_name == 'blog_settings') : ?> active <?php endif; ?>">
 				<a href="javascript: void(0);" class="side-nav-link <?php if ($page_name == 'blog' || $page_name == 'blog_add' || $page_name == 'blog_edit' || $page_name == 'blog_category' || $page_name == 'blog_settings' || $page_name == 'instructors_pending_blog') : ?> active <?php endif; ?>">
 					<i class="dripicons-blog"></i>
 					<span> <?php echo get_phrase('blog'); ?> </span>
@@ -499,7 +499,7 @@ $status_wise_courses = $this->crud_model->get_status_wise_courses();
 
 
 		<?php if (addon_status('customer_support')) : ?>
-			<li class="side-nav-item <?php if ($page_name == 'tickets' || $page_name == 'support_category' || $page_name == 'support_macro' || $page_name == 'create_ticket') : ?> active <?php endif; ?>">
+			<li class="side-nav-item side-item <?php if ($page_name == 'tickets' || $page_name == 'support_category' || $page_name == 'support_macro' || $page_name == 'create_ticket') : ?> active <?php endif; ?>">
 				<a href="javascript: void(0);" class="side-nav-link">
 					<i class="dripicons-help"></i>
 					<span> <?php echo get_phrase('customer_support'); ?> </span>
@@ -523,7 +523,7 @@ $status_wise_courses = $this->crud_model->get_status_wise_courses();
 		<?php endif; ?>
 
 		<?php if (has_permission('addon')) : ?>
-			<li class="side-nav-item">
+			<li class="side-nav-item side-item">
 				<a href="<?php echo site_url('admin/addon'); ?>" class="side-nav-link <?php if ($page_name == 'addons' || $page_name == 'addon_add' || $page_name == 'available_addons') : ?> active <?php endif; ?>">
 					<i class="dripicons-graph-pie"></i>
 					<span><?php echo get_phrase('addons'); ?></span>
@@ -532,7 +532,7 @@ $status_wise_courses = $this->crud_model->get_status_wise_courses();
 		<?php endif; ?>
 
 		<?php if (has_permission('theme')) : ?>
-			<li class="side-nav-item">
+			<li class="side-nav-item side-item">
 				<a href="<?php echo site_url('admin/theme_settings'); ?>" class="side-nav-link <?php if ($page_name == 'theme_settings') echo 'active'; ?>">
 					<i class="dripicons-brush"></i>
 					<span><?php echo get_phrase('themes'); ?></span>
@@ -542,7 +542,7 @@ $status_wise_courses = $this->crud_model->get_status_wise_courses();
 
 
 		<?php if (has_permission('settings')) : ?>
-			<li class="side-nav-item  <?php if ($page_name == 'system_settings' || $page_name == 'frontend_settings' || $page_name == 'payment_settings' || $page_name == 'manage_language' || $page_name == 'about' || $page_name == 'themes' || $page_name == 'custom_page' || $page_name == 'data_center' || $page_name == 'notification_settings' || $page_name == 'jitsi_live_class_settings') : ?> active <?php endif; ?>">
+			<li class="side-nav-item side-item <?php if ($page_name == 'system_settings' || $page_name == 'frontend_settings' || $page_name == 'payment_settings' || $page_name == 'manage_language' || $page_name == 'about' || $page_name == 'themes' || $page_name == 'custom_page' || $page_name == 'data_center' || $page_name == 'notification_settings' || $page_name == 'jitsi_live_class_settings') : ?> active <?php endif; ?>">
 				<a href="javascript: void(0);" class="side-nav-link">
 					<i class="dripicons-toggles"></i>
 					<span> <?php echo get_phrase('settings'); ?> </span>
@@ -631,7 +631,7 @@ $status_wise_courses = $this->crud_model->get_status_wise_courses();
 			</li>
 		<?php endif; ?>
 
-		<li class="side-nav-item <?php if ($page_name == 'manage_profile') echo 'active'; ?>">
+		<li class="side-nav-item side-item <?php if ($page_name == 'manage_profile') echo 'active'; ?>">
 			<a href="<?php echo site_url(strtolower($this->session->userdata('role')) . '/manage_profile'); ?>" class="side-nav-link">
 				<i class="dripicons-user"></i>
 				<span><?php echo get_phrase('manage_profile'); ?></span>

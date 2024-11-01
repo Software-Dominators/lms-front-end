@@ -10,16 +10,28 @@
 <link href="<?php echo base_url('assets/backend/css/vendor/dropzone.css'); ?>" rel="stylesheet" type="text/css" />
 <!-- third party css end -->
 <!-- App css -->
+<!-- start on progress one by(Shaymaa)-->
 <link href="<?php echo base_url('assets/backend/css/app.min.css') ?>" rel="stylesheet" type="text/css" />
+<!-- end on progress one by(Shaymaa) -->
+
 <link href="<?php echo base_url('assets/backend/css/icons.min.css'); ?>" rel="stylesheet" type="text/css" />
 
+<!-- start on progress tow by(Shaymaa) -->
 <link href="<?php echo base_url('assets/backend/css/main.css') ?>" rel="stylesheet" type="text/css" />
+<!-- end on progress tow by(Shaymaa)-->
+
 
 
 <!-- font awesome 5 -->
 <link href="<?php echo base_url('assets/backend/css/fontawesome-all.min.css') ?>" rel="stylesheet" type="text/css" />
 <link href="<?php echo base_url('assets/backend/css/font-awesome-icon-picker/fontawesome-iconpicker.min.css') ?>" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css">
+
+<!-- start new style (Shaymaa) -->
+<link href="<?php echo base_url('assets/backend/css/dashboardstyle/home/leftside.css') ?>" rel="stylesheet" type="text/css" />
+<link href="<?php echo base_url('assets/backend/css/dashboardstyle/home/inside.css') ?>" rel="stylesheet" type="text/css" />
+<link href="<?php echo base_url('assets/backend/css/dashboardstyle/home/navbar.css') ?>" rel="stylesheet" type="text/css" />
+<!-- end new style(Shaymaa)-->
 
 <script src="<?php echo base_url('assets/backend/js/jquery-3.3.1.min.js'); ?>" charset="utf-8"></script>
 <script src="<?php echo site_url('assets/backend/js/onDomChange.js');?>"></script>
