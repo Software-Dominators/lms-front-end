@@ -1,27 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
-
-:root {
---main-color-- :#232F43;
---second-color-- : #EA9744;
---hover-color-- : #FFFFFF17 ;
---main-font-- : "Outfit", sans-serif !important;
-}
-* {
-    box-sizing: border-box;
-}
-html {
-    scroll-behavior: smooth;
-    font-size: 16px !important;
-}
-body {
-    font-family: var(--main-font--);
-    padding: 0;
-    margin: 0;
-}
-.container-fluid {
-    padding-left: 0;
-    margin-left: 0;
-}
+@import "global-style.css";
 .left-side-menu {
     background-color: var(--main-color--);
     
