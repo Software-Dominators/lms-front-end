@@ -4,8 +4,15 @@ $course_details = $this->crud_model->get_course_by_id($course_id)->row_array();
 <div class="row ">
     <div class="col-xl-12">
         <div class="card">
-            <div class="card-body">
-                <h4 class="page-title"> <i class="mdi mdi-apple-keyboard-command title_icon"></i> <?php echo get_phrase('update') . ': ' . $course_details['title']; ?></h4>
+            <div style = "" class="card-body">
+            <i style = " color: #232F43;font-size: 27px" class="dripicons-view-apps"></i> 
+            <h4  style ="color: #8B93A1; margin-left: 16px;font-family: Outfit;font-size: 24px;
+            font-weight: 400;line-height: 36px;text-align: left;display : inline-block;" 
+                 class="page-title">  <?php echo get_phrase('Courses') ; ?></h4> 
+                 <i style = "color:#27344B ;  font-size:24px; padding:16px "  class="mdi mdi-arrow-right"></i>
+                 <h4 style ="  display: inline-block;color:#232F43;font-family: Outfit;
+                font-size: 24px;font-weight: 400;  " 
+                class="header-title my-1"><?php echo get_phrase('Educational Content (curriculum)'); ?> </h4>
             </div> <!-- end card body-->
         </div> <!-- end card -->
     </div><!-- end col-->
@@ -20,48 +27,42 @@ $course_details = $this->crud_model->get_course_by_id($course_id)->row_array();
             </div>
             <!--end ajax page loader-->
             <div class="card-body">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h4 class="header-title my-1"><?php echo get_phrase('course_manager'); ?></h4>
-                    </div>
-                    <div class="col-md-6">
-                        <a href="<?php echo site_url('admin/preview/' . $course_id); ?>" class="alignToTitle btn btn-outline-secondary btn-rounded btn-sm ml-1 my-1" target="_blank"><?php echo get_phrase('view_on_frontend'); ?> <i class="mdi mdi-arrow-right"></i> </a>
-
-                        <a href="<?php echo site_url('admin/courses'); ?>" class="alignToTitle btn btn-outline-secondary btn-rounded btn-sm my-1"> <i class=" mdi mdi-keyboard-backspace"></i> <?php echo get_phrase('back_to_course_list'); ?></a>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-xl-12">
-                        <form class="required-form" action="<?php echo site_url('admin/course_actions/edit/' . $course_id); ?>" method="post" enctype="multipart/form-data" autocomplete="off">
+             
+ <div class="row">
+     <div class="col-xl-12">
+         <form class="required-form" action="<?php echo site_url('admin/course_actions/edit/' . $course_id); ?>" method="post" enctype="multipart/form-data" autocomplete="off">
                             <div class="scrollable-tab-section" id="basicwizard">
 
-                                <button type="button" class="scrollable-tab-btn-left"><i class="mdi mdi-arrow-left"></i></button>
+                                <button style = "border: 1px solid #F5F1EF ;top:4%;
+background-color:#F5F1EF "  type="button" class="scrollable-tab-btn-left">
+                                    <i style = "color: #A5938A" class="mdi mdi-arrow-left"></i></button>
 
-                                <div class="scrollable-tab">
-                                    <ul class="nav nav-pills nav-justified form-wizard-header">
+             <div  style = "padding:8px;"  class="scrollable-tab">
+                                    <ul  style = " height: 56px"class="nav nav-pills nav-justified form-wizard-header">
                                         <li class="nav-item">
-                                            <a href="#curriculum" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
-                                                <i class="mdi mdi-account-circle"></i>
-                                                <span class=""><?php echo get_phrase('curriculum'); ?></span>
+                                            <a style ="     min-width: 250px;
+                                             background : #A5938A; color : #F5F1EF;"
+                                            href="#curriculum" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
+                                                <!-- <i class="mdi mdi-account-circle"></i> -->
+                                                <span class=""><?php echo get_phrase('Eductional Content(curriculum)'); ?></span>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#academic_progress" onclick="student_academic_progress('<?php echo $course_details['id']; ?>')" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
-                                                <i class="mdi mdi-chart-bar-stacked"></i>
+                                            <a   style ="  background: #F5F1EF;; color :#A5938A ;"href="#academic_progress" onclick="student_academic_progress('<?php echo $course_details['id']; ?>')" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
+                                                <!-- <i class="mdi mdi-chart-bar-stacked"></i> -->
                                                 <span class=""><?php echo get_phrase('Academic progress'); ?></span>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#bbb-live-class" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
-                                                <i class="mdi mdi-video-account"></i>
+                                            <a  style ="  background: #F5F1EF;; color :#A5938A ;"href="#bbb-live-class" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
+                                                <!-- <i class="mdi mdi-video-account"></i> -->
                                                 <span class=""><?php echo get_phrase('BBB live class'); ?></span>
                                             </a>
                                         </li>
                                         <?php if (addon_status('live-class')) : ?>
                                             <li class="nav-item">
-                                                <a href="#live-class" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
-                                                    <i class="mdi mdi-video-account"></i>
+                                                <a  style ="  background: #F5F1EF;; color :#A5938A ;"href="#live-class" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
+                                                    <!-- <i class="mdi mdi-video-account"></i> -->
                                                     <span class=""><?php echo get_phrase('zoom_live_class'); ?></span>
                                                 </a>
                                             </li>
@@ -69,8 +70,8 @@ $course_details = $this->crud_model->get_course_by_id($course_id)->row_array();
 
                                         <?php if (addon_status('jitsi-live-class')) : ?>
                                             <li class="nav-item jitsiLiveClassNavItem">
-                                                <a href="#jitsi-live-class" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
-                                                    <i class="mdi mdi-video-account"></i>
+                                                <a style ="  background: #F5F1EF;; color :#A5938A ;" href="#jitsi-live-class" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
+                                                    <!-- <i class="mdi mdi-video-account"></i> -->
                                                     <span class=""><?php echo get_phrase('jitsi_live_class'); ?></span>
                                                 </a>
                                             </li>
@@ -78,8 +79,8 @@ $course_details = $this->crud_model->get_course_by_id($course_id)->row_array();
 
                                         <?php if (addon_status('assignment')) : ?>
                                             <li class="nav-item">
-                                                <a href="#assignment" onclick="load_assignment_list()" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
-                                                    <i class="dripicons-document"></i>
+                                                <a  style ="  background: #F5F1EF;; color :#A5938A ;"href="#assignment" onclick="load_assignment_list()" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
+                                                    <!-- <i class="dripicons-document"></i> -->
                                                     <span class=""><?php echo get_phrase('assignment'); ?></span>
                                                 </a>
                                             </li>
@@ -87,8 +88,8 @@ $course_details = $this->crud_model->get_course_by_id($course_id)->row_array();
 
                                         <?php if (addon_status('noticeboard')) : ?>
                                             <li class="nav-item">
-                                                <a href="#noticeboard" onclick="load_notic_list()" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
-                                                    <i class="mdi mdi-clipboard-text-outline"></i>
+                                                <a style ="  background: #F5F1EF;; color :#A5938A ;" href="#noticeboard" onclick="load_notic_list()" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
+                                                    <!-- <i class="mdi mdi-clipboard-text-outline"></i> -->
                                                     <span class=""><?php echo get_phrase('noticeboard'); ?></span>
                                                 </a>
                                             </li>
@@ -96,55 +97,80 @@ $course_details = $this->crud_model->get_course_by_id($course_id)->row_array();
 
                                         <?php if (addon_status('course_analytics')) : ?>
                                             <li class="nav-item">
-                                                <a href="#course_analytics" onclick="load_analytics_chart()" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
-                                                    <i class="mdi mdi-chart-bar"></i>
+                                                <a  style ="  background: #F5F1EF;; color :#A5938A ;"href="#course_analytics" onclick="load_analytics_chart()" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
+                                                    <!-- <i class="mdi mdi-chart-bar"></i> -->
                                                     <span class=""><?php echo get_phrase('analytics'); ?></span>
                                                 </a>
                                             </li>
                                         <?php endif; ?>
 
                                         <li class="nav-item">
-                                            <a href="#basic" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
-                                                <i class="mdi mdi-fountain-pen-tip"></i>
+                                            <a  style ="  background: #F5F1EF;; color :#A5938A ;"href="#basic" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
+                                                <!-- <i class="mdi mdi-fountain-pen-tip"></i> -->
                                                 <span class=""><?php echo get_phrase('basic'); ?></span>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#info" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
-                                                <i class="mdi mdi-information-outline"></i>
+                                            <a style ="  background: #F5F1EF;; color :#A5938A ;"href="#info" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
+                                                <!-- <i class="mdi mdi-information-outline"></i> -->
                                                 <span class=""><?php echo get_phrase('info'); ?></span>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#pricing" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
-                                                <i class="mdi mdi-currency-cny"></i>
+                                            <a style ="  background: #F5F1EF;; color :#A5938A ;"href="#pricing" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
+                                                <!-- <i class="mdi mdi-currency-cny"></i> -->
                                                 <span class=""><?php echo get_phrase('pricing'); ?></span>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#media" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
-                                                <i class="mdi mdi-library-video"></i>
+                                            <a style ="  background: #F5F1EF;; color :#A5938A ;"href="#media" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
+                                                <!-- <i class="mdi mdi-library-video"></i> -->
                                                 <span class=""><?php echo get_phrase('media'); ?></span>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#seo" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
-                                                <i class="mdi mdi-tag-multiple"></i>
+                                            <a style ="  background: #F5F1EF;; color :#A5938A ;"href="#seo" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
+                                                <!-- <i class="mdi mdi-tag-multiple"></i> -->
                                                 <span class=""><?php echo get_phrase('seo'); ?></span>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#finish" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
-                                                <i class="mdi mdi-checkbox-marked-circle-outline"></i>
+                                            <a style ="  background: #F5F1EF;; color :#A5938A ;" href="#finish" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
+                                                <!-- <i class="mdi mdi-checkbox-marked-circle-outline"></i> -->
                                                 <span class=""><?php echo get_phrase('finish'); ?></span>
                                             </a>
                                         </li>
                                     </ul>
                                 </div>
 
-                                <button type="button" class="scrollable-tab-btn-right"><i class="mdi mdi-arrow-right"></i></button>
+                                <button  style = "border: 1px solid  #A5938A; top:4%;background-color:#A5938A"  type="button" class="scrollable-tab-btn-right">
+              <i   style = " color:#F5F1EF; "class="mdi mdi-arrow-right"></i></button>
+              <div class="row">
+                    <div class="col-md-6">
+                        <h4 style ="//styleName: Med/32;font-family: Outfit;font-size: 32px;
+font-weight: 500;line-height: 48px;text-align: left;color:#515D72;"
+                         class="header-title my-1"><?php echo get_phrase('Front end course'); ?></h4></div>
+                    <div style = "left :30%" class="col-md-6">
 
-                                <div class="tab-content b-0 mb-0">
+             <a style ="padding: 10px 20px ;border-radius: 8px 0px 0px 0px;
+                    border: 1px  solid;border-color:#F79C32;color :#F79C32;
+                     a:hofer{background-color:#F79C32};"   
+                    href="javascript:void(0)" class="btn btn-outline-primary btn-rounded btn-sm ml-1" 
+                    onclick="showAjaxModal('http://localhost/project1/lms-front-end/modal/popup/section_add/1', 'Add new section')">
+                    <i class="mdi mdi-plus"></i> Add section</a> <i style = "color :#F79C32; background-color:#EEF6FD; position :relative; left:40px;" class="mdi mdi-apple-keyboard-command title_icon"></i>
+
+                        <!-- <a href="<?php echo site_url('admin/preview/' . $course_id); ?>" class="alignToTitle btn btn-outline-secondary btn-rounded btn-sm ml-1 my-1" target="_blank"><?php echo get_phrase('view_on_frontend'); ?> <i class="mdi mdi-arrow-right"></i> </a>
+
+                        <a href="<?php echo site_url('admin/courses'); ?>" class="alignToTitle btn btn-outline-secondary btn-rounded btn-sm my-1"> <i class=" mdi mdi-keyboard-backspace"></i> <?php echo get_phrase('back_to_course_list'); ?></a> -->
+                    </div>
+                    <div style ="//styleName: Light/20;font-family: Outfit;font-size: 20px;font-weight: 300;
+line-height: 30px;text-align: left;color:#5FB0ED;padding-left:16px;
+"><p>Instructor :Mahmoud Galal</p> </div>
+                </div>  
+                               
+    <head>
+    <style></style>   
+    </head>                         <div class="tab-content b-0 mb-0">
                                     <div class="tab-pane" id="curriculum">
                                         <?php
                                         if ($course_details['course_type'] == 'general') :
