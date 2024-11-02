@@ -19,11 +19,21 @@ table.dataTable.nowrap th,
 table.dataTable.nowrap td {
   white-space: nowrap;
 }
+/* new-style for dataTables  */
+.dataTables_wrapper .row{
 
+  flex-direction: row-reverse !important;
+}
+div.dataTables_wrapper{
+
+}
 div.dataTables_wrapper div.dataTables_length label {
   font-weight: normal;
   text-align: left;
   white-space: nowrap;
+}
+div.dataTables_wrapper div.dataTables_length{
+  text-align: right;
 }
 div.dataTables_wrapper div.dataTables_length select {
   width: auto;
@@ -41,6 +51,7 @@ div.dataTables_wrapper div.dataTables_filter input {
   margin-left: 0.5em;
   display: inline-block;
   width: auto;
+  
 }
 div.dataTables_wrapper div.dataTables_info {
   padding-top: 0.85em;
