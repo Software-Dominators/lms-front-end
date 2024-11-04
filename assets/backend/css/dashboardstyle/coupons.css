@@ -11,3 +11,44 @@
     font-weight: 400;
     line-height: 27px;
 }
+
+.edit-coupon .modal-content ,.add-coupon .modal-content{
+    max-width: 491px !important;
+    border-radius: 8px !important;
+    box-shadow: 0px -1px 0px 0px #EDF2F7 inset;
+}
+ .edit-coupon .modal-content h4,  .add-coupon .modal-content h4{
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 36px;
+  color: #232F43;
+  margin-bottom: 24px;
+}
+.edit-coupon label , .add-coupon label {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    color: #AEAEAE ;
+    margin-bottom: 8px;
+}
+.edit-coupon label span  , .add-coupon label span {
+    color: var(--second-color--);
+}
+.edit-coupon input , .add-coupon input {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 27px;
+    color: #282828;
+    margin-bottom: 32px;
+    border: 1px solid #D6D6D6;
+    border-radius: 8px;
+  
+}
+/* generate  code button style on add coupon form  */
+.add-coupon .input-group-append button {
+    background-color:#AEAEAE !important;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color:#FDFDFD;
+}

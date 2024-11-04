@@ -65,9 +65,9 @@
 <link href="<?=base_url('assets/backend/css/font-awesome-icon-picker/fontawesome-iconpicker.min.css')?>" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css">
 
-<!-- start new style (Shaymaa) -->
+<!-- start new style for dashboard -->
 <link href="<?=base_url('assets/backend/css/dashboardstyle/style.css')?>" rel="stylesheet" type="text/css" />
-<!-- end new style(Shaymaa)-->
+<!-- end new style for dashboard-->
 
 <script src="<?=base_url('assets/backend/js/jquery-3.3.1.min.js')?>" charset="utf-8"></script>
 <script src="<?=site_url('assets/backend/js/onDomChange.js')?>"></script>

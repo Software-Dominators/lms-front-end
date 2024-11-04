@@ -11,6 +11,7 @@
     --light-orange-action-color:#FEF5EA;
     --table-header-color:#FAFAFB;
 	--txt-color:#FAF8F7;
+	--error-color:#E81010;
 	--main-font-- : "Outfit", sans-serif !important;
 	--table-head-bg-color:#FAFAFB;
 	}
@@ -230,6 +231,8 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination .page-item.previous
 	transition: 0.25s all;
 	color: var(--btn-bg-color);
 	border:none !important;
+	outline: none !important;
+	box-shadow: none !important;
 }
 .action-btn i {
 	font-size: 10px;
@@ -239,11 +242,83 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination .page-item.previous
 	background-color: var(--btn-bg-color);
 	color: var(--txt-color);
 }
-/* .search-input::placeholder{
-	font-size: 16px;
+
+
+/* delete modal new style  */
+.delete-modal .modal-content{
+	max-width: 465px !important;
+	border-radius: 8px !important;
+}
+.delete-modal .error-icon{
+   width: 53.44px ;
+   height: 53.44px;
+   background-color: var(--error-color);
+   color: #fff;
+   border-radius: 50%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 30px;
+   font-weight: 700;
+   margin: auto;
+}
+.delete-modal .header{
+	font-weight: 500;
+	font-size: 24px;
+	line-height:36px ;
+	color: var(--error-color);
+	margin-top: 24px;
+}
+.delete-modal p {
 	font-weight: 400;
-	line-height: 24px;
-} */
+	font-size: 20px;
+	line-height:30px ;
+	color: #6B6D6F;
+	margin-top: 8px;
+}
+.delete-modal .error-cancel-btn , .delete-modal .delete-btn , .submit-btn , .cancel-btn {
+	border: none;
+	outline: none;
+	width: 188px;
+	font-size: 18px;
+	font-weight: 500;
+	line-height:27px ;
+	margin-top: 16px;
+	border-radius: 8px;
+	padding: 7.5px;
+	min-width: 188px;
+	transition: 0.25s all;
+}
+.submit-btn{
+	background-color: var(--btn-bg-color);
+	color: var(--txt-color);
+}
+.submit-btn:hover{
+	opacity: 0.7;
+}
+.cancel-btn{
+	border: 1px solid var(--bg-btn-color);
+	color:var(--btn-bg-color);
+}
+/* cancel button in delete modal style  */
+.delete-modal .error-cancel-btn{
+	background-color: transparent;
+	color: var(--error-color);
+	border: 1px solid var(--error-color);
+}
+/* delete button in delete modal style  */
+.delete-modal .delete-btn{
+	border: none;
+	outline: none;
+	background-color: var(--error-color);
+	color: #fff;
+}
+.delete-modal .action-btns {
+	gap: 24px !important;
+}
+.modal .action-btns{
+	gap: 50px;
+}
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) { 
 

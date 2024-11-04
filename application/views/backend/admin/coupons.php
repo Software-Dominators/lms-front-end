@@ -4,8 +4,9 @@
             <div class="card-body">
             
                 <h4 class="title">   <img src="../assets/backend/images/grip-dots-icon.svg" class="title-icon" alt=""> <?php echo $page_title; ?>
-                    <a href="<?php echo site_url('admin/coupon_form/add_coupon_form'); ?>" class="add-btn alignToTitle"><?php echo get_phrase('add_new_coupon'); ?></a>
+                    <a href="#"   onclick="add_coupon_modal('<?php echo site_url('admin/coupons/add_coupon_form'); ?>');" class="add-btn alignToTitle"><?php echo get_phrase('add_new_coupon'); ?></a>
                 </h4>
+              
             </div> <!-- end card body-->
         </div> <!-- end card -->
     </div><!-- end col-->
@@ -41,7 +42,8 @@
                                             <i class="fa-solid fa-ellipsis"></i>
                                             </button>
                                             <ul class="dropdown-menu ">
-                                                <li><a class="dropdown-item" href="<?php echo site_url('admin/coupon_form/edit_coupon_form/' . $coupon['id']) ?>"><?php echo get_phrase('edit'); ?></a></li>
+                                            <!-- href="<?php echo site_url('admin/coupon_form/edit_coupon_form/' . $coupon['id']) ?>"  -->
+                                                <li><a class="dropdown-item" onclick="edit_coupon_modal('<?php echo site_url('admin/coupon_form/edit_coupon_form/' . $coupon['id']); ?>');"  ><?php echo get_phrase('edit'); ?></a></li>
                                                 <li><a class="dropdown-item" href="#" onclick="confirm_modal('<?php echo site_url('admin/coupons/delete/' . $coupon['id']); ?>');"><?php echo get_phrase('delete'); ?></a></li>
                                             </ul>
                                         </div>
@@ -54,4 +56,26 @@
             </div> <!-- end card body-->
         </div> <!-- end card -->
     </div><!-- end col-->
+</div>
+<!-- modal for add coupon  -->
+ <!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
 </div>
