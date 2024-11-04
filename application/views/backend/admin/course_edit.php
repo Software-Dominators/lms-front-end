@@ -33,9 +33,9 @@ $course_details = $this->crud_model->get_course_by_id($course_id)->row_array();
          <form class="required-form" action="<?php echo site_url('admin/course_actions/edit/' . $course_id); ?>" method="post" enctype="multipart/form-data" autocomplete="off">
                             <div class="scrollable-tab-section" id="basicwizard">
 
-                                <button style = "border: 1px solid #F5F1EF ;top:4%;
-background-color:#F5F1EF "  type="button" class="scrollable-tab-btn-left">
-                                    <i style = "color: #A5938A" class="mdi mdi-arrow-left"></i></button>
+  <button style = "border: 1px solid #F5F1EF ;top:4%;background-color:#F5F1EF " 
+   type="button" class="scrollable-tab-btn-left">
+    <i style = "color: #A5938A" class="mdi mdi-arrow-left"></i></button>
 
              <div  style = "padding:8px;"  class="scrollable-tab">
                                     <ul  style = " height: 56px"class="nav nav-pills nav-justified form-wizard-header">
@@ -314,7 +314,11 @@ font-family: Outfit;font-size: 18px;font-weight: 400;line-height: 27px;text-alig
                                                 <div class="form-group row mb-3">
 
                                                     <div class="col-md-10">
-                                                        <textarea name="description" id="description" class="form-control"><?php echo $course_details['description']; ?>Intro to front end</textarea>
+
+
+
+                                                    
+                                                        <textarea style="color: #AEAEAE; width: 709.8px;height: 189px;padding: 10px 8px 10px 16px;gap: 0px;border-radius: 8px 0px 0px 0px;border: 1px 0px 0px 0px;justify: space-between;opacity: 0px;border: 1px solid #D6D6D6"  name="description" id="description" class="form-control"><?php echo $course_details['description']; ?>Intro to front end</textarea>
                                                     </div>
                                                 </div>
                                                  <label class="col-md-2 col-form-label" for="sub_category_id"><?php echo get_phrase('category'); ?><span class="required">*</span></label>
@@ -412,7 +416,7 @@ font-family: Outfit;font-size: 18px;font-weight: 400;line-height: 27px;text-alig
                                             </div> <!-- end col -->
                                         </div> <!-- end row -->
                                     </div> <!-- end tab pane -->
-                                   
+                                    
 
                                     <div class="tab-pane" id="info">
                                         <div class="row justify-content-center">
@@ -662,11 +666,12 @@ font-family: Outfit;font-size: 18px;font-weight: 400;line-height: 27px;text-alig
                                         </div> <!-- end row -->
                                     </div> <!-- end tab-pane -->
                                     <div class="tab-pane" id="media">
-                                        <div class="row justify-content-center">
+                                        <div class="row ">
 
                                             <div class="col-xl-8">
+                                            <label class="col-md-5 col-form-label" for="course_overview_provider"><?php echo get_phrase('course_overview_provider'); ?></label>
                                                 <div class="form-group row mb-3">
-                                                    <label class="col-md-2 col-form-label" for="course_overview_provider"><?php echo get_phrase('course_overview_provider'); ?></label>
+                                                   
                                                     <div class="col-md-10">
                                                         <select class="form-control select2" data-toggle="select2" name="course_overview_provider" id="course_overview_provider">
                                                             <option value="youtube" <?php if ($course_details['course_overview_provider'] == 'youtube') echo 'selected'; ?>><?php echo get_phrase('youtube'); ?></option>
@@ -678,8 +683,9 @@ font-family: Outfit;font-size: 18px;font-weight: 400;line-height: 27px;text-alig
                                             </div> <!-- end col -->
 
                                             <div class="col-xl-8">
+                                            <label class="col-md-5 col-form-label" for="course_overview_url"><?php echo get_phrase('course_overview_url'); ?></label>
                                                 <div class="form-group row mb-3">
-                                                    <label class="col-md-2 col-form-label" for="course_overview_url"><?php echo get_phrase('course_overview_url'); ?></label>
+                                                   
                                                     <div class="col-md-10">
                                                         <input type="text" class="form-control" name="course_overview_url" id="course_overview_url" placeholder="E.g: https://www.youtube.com/watch?v=oBtf8Yglw2w" value="<?php echo $course_details['video_url'] ?>">
                                                     </div>
@@ -692,20 +698,24 @@ font-family: Outfit;font-size: 18px;font-weight: 400;line-height: 27px;text-alig
                                         </div> <!-- end row -->
                                     </div>
                                     <div class="tab-pane" id="seo">
-                                        <div class="row justify-content-center">
+                                        <div class="row ">
                                             <div class="col-xl-8">
+                                            <label class="col-md-2 col-form-label" for="website_keywords"><?php echo get_phrase('meta_keywords'); ?></label>
                                                 <div class="form-group row mb-3">
-                                                    <label class="col-md-2 col-form-label" for="website_keywords"><?php echo get_phrase('meta_keywords'); ?></label>
-                                                    <div class="col-md-10">
-                                                        <input type="text" class="form-control bootstrap-tag-input" id="meta_keywords" name="meta_keywords" data-role="tagsinput" style="width: 100%;" value="<?php echo $course_details['meta_keywords']; ?>" placeholder="<?php echo get_phrase('write_a_keyword_and_then_press_enter_button'); ?>" . />
+                                                   
+                                                <div class="col-md-10">
+                                                        <input type="text" class="form-control" name="course_overview_url" id="course_overview_url" placeholder="Youtube" value="<?php echo $course_details['video_url'] ?>">
                                                     </div>
                                                 </div>
                                             </div> <!-- end col -->
                                             <div class="col-xl-8">
+                                            <label class="col-md-2 col-form-label" for="meta_description"><?php echo get_phrase('meta_description'); ?></label>
                                                 <div class="form-group row mb-3">
-                                                    <label class="col-md-2 col-form-label" for="meta_description"><?php echo get_phrase('meta_description'); ?></label>
+                                                   
                                                     <div class="col-md-10">
-                                                        <textarea name="meta_description" class="form-control"><?php echo $course_details['meta_description']; ?></textarea>
+                                                        <textarea 
+                                                        style ="color: #AEAEAE; width: 709.9px;height: 94px;padding: 10px 8px 10px 16px;gap: 0px;border-radius: 8px 0px 0px 0px;border: 1px 0px 0px 0px;justify: space-between;opacity: 0px;border: 1px solid #D6D6D6"
+                                                        name="meta_description" class="form-control"><?php echo $course_details['meta_description']; ?>Youtube</textarea>
                                                     </div>
                                                 </div>
                                             </div> <!-- end col -->

@@ -42,7 +42,7 @@
         <div class="form-group">
             <label for="bb_meeting_instruction"><?php echo get_phrase('Instructions for students'); ?></label>
             <textarea
-             style ="color: #AEAEAE; width: 523px;height: 189px;padding: 10px 8px 10px 16px;gap: 0px;border-radius: 8px 0px 0px 0px;border: 1px 0px 0px 0px;justify: space-between;opacity: 0px;border: 1px solid #D6D6D6"
+             style ="color: #AEAEAE; width: 635.9px;height: 189px;padding: 10px 8px 10px 16px;gap: 0px;border-radius: 8px 0px 0px 0px;border: 1px 0px 0px 0px;justify: space-between;opacity: 0px;border: 1px solid #D6D6D6"
              id="bb_meeting_instruction"><?php echo $bbb_meeting['instructions'] ?? '' ?>Intro to front end</textarea>
             <div style ="display:flex ; ">
             <div style ="width: 21.97px;     border-radius:50%; border: 1px solid #868686;
@@ -55,6 +55,7 @@ Give some instructions to keep your students informed about the meeting</p>
             
         </div>
 </div>
+
 
 
     </div>
