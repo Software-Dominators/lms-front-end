@@ -14,14 +14,16 @@
     <!-- all the css files -->
     <?php include 'includes_top.php'; ?>
 </head>
-<body data-layout="detached">
+<body data-layout="detached" >
     <!-- HEADER -->
     <?php include 'header.php'; ?>
+    
     <div class="container-fluid">
-        <div class="wrapper">
+        <div class="wrapper d-flex justify-content-between pt-0">
             <!-- BEGIN CONTENT -->
             <!-- SIDEBAR -->
             <?php include $logged_in_user_role.'/'.'navigation.php' ?>
+            
             <!-- PAGE CONTAINER-->
             <div class="content-page">
                 <div class="content">

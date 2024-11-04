@@ -81,12 +81,12 @@ function confirm_modal(delete_url)
 </script>
 
 <!-- Info Alert Modal -->
-<div id="alert-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+<div id="alert-modal" class="modal fade delete-modal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
             <div class="modal-body p-4">
                 <div class="text-center">
-                    <i class="dripicons-information h1 text-info"></i>
+                    <i class="dripicons-information h1 text-info "></i>
                     <h4 class="mt-2"><?php echo get_phrase("heads_up"); ?>!</h4>
                     <p class="mt-3"><?php echo get_phrase("are_you_sure"); ?>?</p>
                     <button type="button" class="btn btn-info my-2" data-dismiss="modal"><?php echo get_phrase("cancel"); ?></button>

@@ -33,7 +33,7 @@ $course_details = $this->crud_model->get_course_by_id($course_id)->row_array();
          <form class="required-form" action="<?php echo site_url('admin/course_actions/edit/' . $course_id); ?>" method="post" enctype="multipart/form-data" autocomplete="off">
                             <div class="scrollable-tab-section" id="basicwizard">
 
-                                <button style = "border: 1px solid #F5F1EF ;top:4%;
+                                <button style = "border: 1px solid #F5F1EF ;top:2%;
 background-color:#F5F1EF "  type="button" class="scrollable-tab-btn-left">
                                     <i style = "color: #A5938A" class="mdi mdi-arrow-left"></i></button>
 
@@ -143,34 +143,11 @@ background-color:#F5F1EF "  type="button" class="scrollable-tab-btn-left">
                                     </ul>
                                 </div>
 
-                                <button  style = "border: 1px solid  #A5938A; top:4%;background-color:#A5938A"  type="button" class="scrollable-tab-btn-right">
+                                <button  style = "border: 1px solid  #A5938A; top:2%;background-color:#A5938A"  type="button" class="scrollable-tab-btn-right">
               <i   style = " color:#F5F1EF; "class="mdi mdi-arrow-right"></i></button>
-              <div class="row">
-                    <div class="col-md-6">
-                        <h4 style ="//styleName: Med/32;font-family: Outfit;font-size: 32px;
-font-weight: 500;line-height: 48px;text-align: left;color:#515D72;"
-                         class="header-title my-1"><?php echo get_phrase('Front end course'); ?></h4></div>
-                    <div style = "left :30%" class="col-md-6">
-
-             <a style ="padding: 10px 20px ;border-radius: 8px 0px 0px 0px;
-                    border: 1px  solid;border-color:#F79C32;color :#F79C32;
-                     a:hofer{background-color:#F79C32};"   
-                    href="javascript:void(0)" class="btn btn-outline-primary btn-rounded btn-sm ml-1" 
-                    onclick="showAjaxModal('http://localhost/project1/lms-front-end/modal/popup/section_add/1', 'Add new section')">
-                    <i class="mdi mdi-plus"></i> Add section</a> <i style = "color :#F79C32; background-color:#EEF6FD; position :relative; left:40px;" class="mdi mdi-apple-keyboard-command title_icon"></i>
-
-                        <!-- <a href="<?php echo site_url('admin/preview/' . $course_id); ?>" class="alignToTitle btn btn-outline-secondary btn-rounded btn-sm ml-1 my-1" target="_blank"><?php echo get_phrase('view_on_frontend'); ?> <i class="mdi mdi-arrow-right"></i> </a>
-
-                        <a href="<?php echo site_url('admin/courses'); ?>" class="alignToTitle btn btn-outline-secondary btn-rounded btn-sm my-1"> <i class=" mdi mdi-keyboard-backspace"></i> <?php echo get_phrase('back_to_course_list'); ?></a> -->
-                    </div>
-                    <div style ="//styleName: Light/20;font-family: Outfit;font-size: 20px;font-weight: 300;
-line-height: 30px;text-align: left;color:#5FB0ED;padding-left:16px;
-"><p>Instructor :Mahmoud Galal</p> </div>
-                </div>  
+  
                                
-    <head>
-    <style></style>   
-    </head>                         <div class="tab-content b-0 mb-0">
+                           <div class="tab-content b-0 mb-0">
                                     <div class="tab-pane" id="curriculum">
                                         <?php
                                         if ($course_details['course_type'] == 'general') :
@@ -247,22 +224,26 @@ line-height: 30px;text-align: left;color:#5FB0ED;padding-left:16px;
                                     <!-- COURSE ANALYTICS CODE BASE -->
 
                                     <div class="tab-pane" id="basic">
-                                        <div class="row justify-content-center">
+                                        <div class="row ">
                                             <div class="col-xl-8">
+            <label style ="//styleName: Reg/18;
+font-family: Outfit;font-size: 18px;font-weight: 400;line-height: 27px;text-align: left; color:#868686;" class="col-md-2 col-form-label" for="course_type"><?php echo get_phrase('course_type'); ?></label>
+
                                                 <div class="form-group row mb-3">
-                                                    <label class="col-md-2 col-form-label" for="course_type"><?php echo get_phrase('course_type'); ?></label>
-                                                    <div class="col-md-10">
-                                                        <div class="alert alert-light" role="alert">
-                                                            <h4 class="alert-heading"><?= get_phrase($course_details['course_type']); ?></h4>
-                                                            <hr class="m-1">
-                                                            <p class="mb-0"><?= get_phrase('the_course_type_can_not_be_editable'); ?>.</p>
+                                                   
+                                                    <div  class="col-md-10">
+            <div style ="background-color:#EEF6FD"; class="alert alert-light" role="alert">
+                                                            
+          <p class="mb-0"><?= get_phrase('Course type can not be changed'); ?>.</p>
                                                         </div>
                                                     </div>
                                                 </div>
+<label class="col-md-5 col-form-label" for="existing_instructors"><?php echo get_phrase('instructor_of_this_course'); ?></label>
 
-                                                <div class="form-group row mb-3">
-                                                    <label class="col-md-2 col-form-label" for="existing_instructors"><?php echo get_phrase('instructor_of_this_course'); ?></label>
-                                                    <div class="col-md-10">
+                              <div class="form-group row mb-3">
+
+                             
+                                                 <div class="col-md-10">
                                                         <?php if ($course_details['multi_instructor']) :
                                                             $instructor_ids = explode(',', $course_details['user_id']);
                                                         ?>
@@ -272,7 +253,7 @@ line-height: 30px;text-align: left;color:#5FB0ED;padding-left:16px;
                                                                 <div class="m-2">
                                                                     <img class="rounded-circle" src="<?php echo $this->user_model->get_user_image_url($instructor_details['id']);; ?>" height="30px" alt="">
                                                                     <span style="font-weight: 700; font-size: 15px; vertical-align: sub; margin-left: 6px;">
-                                                                        <?php echo html_escape($instructor_details['first_name'] . ' ' . $instructor_details['last_name']); ?>
+                                                                    id="bbb_meeting_id"              <?php echo html_escape($instructor_details['first_name'] . ' ' . $instructor_details['last_name']); ?>
                                                                     </span>
                                                                     <?php if (count($instructor_ids) > 1 && $course_details['creator'] != $instructor_id) : ?>
                                                                         <a class="btn text-danger mt-1" href="javascript:void(0)" onclick="confirm_modal('<?php echo site_url('admin/remove_an_instructor/' . $course_details['id'] . '/' . $instructor_details['id']); ?>');"> <i class="mdi mdi-delete"></i> <?php echo get_phrase('Remove'); ?></a>
@@ -292,11 +273,22 @@ line-height: 30px;text-align: left;color:#5FB0ED;padding-left:16px;
                                                         <?php endif; ?>
                                                     </div>
                                                 </div>
-
+                                                <label class="col-md-5 col-form-label" for="new_instructor"><?php echo get_phrase('add_new_instructor'); ?></label>
+                                                
                                                 <div class="form-group row mb-3">
-                                                    <label class="col-md-2 col-form-label" for="new_instructor"><?php echo get_phrase('add_new_instructor'); ?></label>
+
+
+
+
+
+
+
+
+                                        
                                                     <div class="col-md-10">
-                                                        <select class="select2 form-control select2-multiple" data-toggle="select2" multiple="multiple" data-placeholder="Choose ..." name="new_instructors[]">
+                                                        <select class="select2 form-control select2-multiple"
+                                                         data-toggle="select2"  
+                                                         data-placeholder="choose instructor" name="new_instructors[]" >
                                                             <?php $instructors = $this->user_model->get_instructor()->result_array(); ?>
                                                             <?php foreach ($instructors as $key => $instructor) : ?>
                                                                 <option value="<?php echo html_escape($instructor['id']); ?>"><?php echo html_escape($instructor['first_name'] . ' ' . $instructor['last_name']); ?> ( <?php echo html_escape($instructor['email']); ?> )</option>
@@ -304,26 +296,30 @@ line-height: 30px;text-align: left;color:#5FB0ED;padding-left:16px;
                                                         </select>
                                                     </div>
                                                 </div>
+                                                <label class="col-md-2 col-form-label" for="course_title"><?php echo get_phrase('course_title'); ?><span class="required">*</span></label>
                                                 <div class="form-group row mb-3">
-                                                    <label class="col-md-2 col-form-label" for="course_title"><?php echo get_phrase('course_title'); ?><span class="required">*</span></label>
+                                                   
                                                     <div class="col-md-10">
-                                                        <input type="text" class="form-control" id="course_title" name="title" placeholder="<?php echo get_phrase('enter_course_title'); ?>" value="<?php echo $course_details['title']; ?>" required>
+                                                        <input type="text" class="form-control" id="course_title" name="title" placeholder="<?php echo get_phrase('Intro to front end'); ?>" value="<?php echo $course_details['title']; ?>" required>
                                                     </div>
                                                 </div>
+                                                <label class="col-md-2 col-form-label" for="short_description"><?php echo get_phrase('short_description'); ?></label>
                                                 <div class="form-group row mb-3">
-                                                    <label class="col-md-2 col-form-label" for="short_description"><?php echo get_phrase('short_description'); ?></label>
+                                                    
                                                     <div class="col-md-10">
-                                                        <textarea name="short_description" id="short_description" class="form-control"><?php echo $course_details['short_description']; ?></textarea>
+                                                        <textarea name="short_description" id="short_description" class="form-control"><?php echo $course_details['short_description']; ?>Intro to front end</textarea>
                                                     </div>
                                                 </div>
+                                                <label class="col-md-2 col-form-label" for="description"><?php echo get_phrase('description'); ?></label>
                                                 <div class="form-group row mb-3">
-                                                    <label class="col-md-2 col-form-label" for="description"><?php echo get_phrase('description'); ?></label>
+
                                                     <div class="col-md-10">
-                                                        <textarea name="description" id="description" class="form-control"><?php echo $course_details['description']; ?></textarea>
+                                                        <textarea name="description" id="description" class="form-control"><?php echo $course_details['description']; ?>Intro to front end</textarea>
                                                     </div>
                                                 </div>
+                                                 <label class="col-md-2 col-form-label" for="sub_category_id"><?php echo get_phrase('category'); ?><span class="required">*</span></label>
                                                 <div class="form-group row mb-3">
-                                                    <label class="col-md-2 col-form-label" for="sub_category_id"><?php echo get_phrase('category'); ?><span class="required">*</span></label>
+                                                   
                                                     <div class="col-md-10">
                                                         <select class="form-control select2" data-toggle="select2" name="sub_category_id" id="sub_category_id" required>
                                                             <option value=""><?php echo get_phrase('select_a_category'); ?></option>
@@ -339,8 +335,10 @@ line-height: 30px;text-align: left;color:#5FB0ED;padding-left:16px;
                                                         <small class="text-muted"><?php echo get_phrase('select_sub_category'); ?></small>
                                                     </div>
                                                 </div>
+                                                <label class="col-md-5 col-form-label" for="level"><?php echo get_phrase('Level'); ?></label>
+                                                
                                                 <div class="form-group row mb-3">
-                                                    <label class="col-md-2 col-form-label" for="level"><?php echo get_phrase('level'); ?></label>
+                                                    
                                                     <div class="col-md-10">
                                                         <select class="form-control select2" data-toggle="select2" name="level" id="level">
                                                             <option value="beginner" <?php if ($course_details['level'] == "beginner") echo 'selected'; ?>><?php echo get_phrase('beginner'); ?></option>
@@ -349,8 +347,9 @@ line-height: 30px;text-align: left;color:#5FB0ED;padding-left:16px;
                                                         </select>
                                                     </div>
                                                 </div>
+                                                <label class="col-md-5 col-form-label" for="language_made_in"><?php echo get_phrase('Course language'); ?></label>
                                                 <div class="form-group row mb-3">
-                                                    <label class="col-md-2 col-form-label" for="language_made_in"><?php echo get_phrase('language_made_in'); ?></label>
+                                                   
                                                     <div class="col-md-10">
                                                         <select class="form-control select2" data-toggle="select2" name="language_made_in" id="language_made_in">
                                                             <?php foreach ($languages as $language) : ?>
@@ -360,10 +359,10 @@ line-height: 30px;text-align: left;color:#5FB0ED;padding-left:16px;
                                                     </div>
                                                 </div>
                                                 <div class="form-group row mb-3">
-                                                    <label class="col-md-2 col-form-label" for="enable_drip_content"><?php echo get_phrase('enable_drip_content'); ?></label>
-                                                    <div class="col-md-10 pt-2">
+                                                    <label class="col-md-3 col-form-label" for="enable_drip_content"><?php echo get_phrase('enable_drip_content'); ?></label>
+                                                    <div class="col-md-9 pt-2">
                                                         <input type="checkbox" name="enable_drip_content" value="1" id="enable_drip_content" data-switch="primary" <?php if ($course_details['enable_drip_content'] == 1) echo 'checked'; ?>>
-                                                        <label for="enable_drip_content" data-on-label="On" data-off-label="Off"></label>
+                                                        <label for="enable_drip_content" data-on-label="On" data-off-label=""></label>
                                                     </div>
                                                 </div>
 

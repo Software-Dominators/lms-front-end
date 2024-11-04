@@ -5,6 +5,8 @@
     $number_of_enrolment = $this->crud_model->enrol_history()->num_rows();
     $number_of_students = $this->user_model->get_user()->num_rows();
 ?>
+
+<section class="container inside_dashboard">
 <div class="row">
     <div class="col-xl-12">
         <div class="card">
@@ -15,7 +17,7 @@
     </div><!-- end col-->
 </div>
 
-<div class="row">
+<div class="row  ">
     <div class="col-xl-12">
         <div class="card">
             <div class="card-body">
@@ -88,7 +90,7 @@
         </div> <!-- end card-box-->
     </div> <!-- end col-->
 </div>
-<div class="row">
+<div class="row ">
     <div class="col-xl-4">
         <div class="card">
             <div class="card-body">
@@ -149,6 +151,8 @@
         </div>
     </div>
 </div>
+</section>
+
 
 <script type="text/javascript">
     $('#unpaid-instructor-revenue').mouseenter(function() {

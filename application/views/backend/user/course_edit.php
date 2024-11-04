@@ -230,7 +230,7 @@ $course_details = $this->crud_model->get_course_by_id($course_id)->row_array();
                                     <?php endif; ?>
                                     <!-- COURSE ANALYTICS CODE BASE -->
 
-                                    <div class="tab-pane" id="basic">
+                                    <div class="tab-pane bg-danger" id="basic">
                                         <div class="row justify-content-center">
                                             <div class="col-xl-8">
                                                 <div class="form-group row mb-3">

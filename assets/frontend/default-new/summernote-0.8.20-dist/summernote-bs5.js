@@ -10032,8 +10032,8 @@ function summernote_bs5_typeof(obj) { "@babel/helpers - typeof"; if (typeof Symb
 
 
 var editor = renderer.create('<div class="note-editor note-frame card"/>');
-var toolbar = renderer.create('<div class="note-toolbar card-header" role="toolbar"/>');
-var editingArea = renderer.create('<div class="note-editing-area"/>');
+// var toolbar = renderer.create('<div class="note-toolbar card-header" role="toolbar"/>');
+// var editingArea = renderer.create('<div class="note-editing-area"/>');
 var codable = renderer.create('<textarea class="note-codable" aria-multiline="true"/>');
 var editable = renderer.create('<div class="note-editable card-block" contentEditable="true" role="textbox" aria-multiline="true"/>');
 var statusbar = renderer.create(['<output class="note-status-output" role="status" aria-live="polite"></output>', '<div class="note-statusbar" role="status">', '<div class="note-resizebar" aria-label="Resize">', '<div class="note-icon-bar"></div>', '<div class="note-icon-bar"></div>', '<div class="note-icon-bar"></div>', '</div>', '</div>'].join(''));

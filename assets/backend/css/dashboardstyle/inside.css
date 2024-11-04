@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+:root {
+	--main-color-- :#232F43;
+	--second-color-- : #EA9744;
+	--hover-color-- : #FFFFFF17 ;
+	--main-font-- : "Outfit", sans-serif !important;
+	}
+* {
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+    font-size: 16px !important;
+}
+body {
+    font-family: var(--main-font--);
+    padding: 0;
+    margin: 0;
+}
+.container-fluid {
+    width: 100%;
+}
+.content-page {
+    padding: 120px 0 0 0 !important;
+}
+.content {
+    padding-right: 0 !important;
+    padding-left: 0;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+
+}
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {  
+	/* .container {
+		width: 720px;
+		margin-left: auto;
+		margin-right: auto;
+	} */
+	/* .inside_dashboard {
+	max-width: 90% !important;
+	} */
+    
+}
+/* Large devices (desktops, 992px and up) */
+
+@media (min-width: 992px) { 
+	/* .container {
+		width: 920px;
+	} */
+
+}
+
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  
+	/* .container {
+		width: 1140px;
+	} */
+
+}
+@media (min-width: 1400px) {  
+	/* .container {
+		width: 1340px;
+	} */
+}
+
+
