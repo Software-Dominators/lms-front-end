@@ -33,7 +33,7 @@ $course_details = $this->crud_model->get_course_by_id($course_id)->row_array();
          <form class="required-form" action="<?php echo site_url('admin/course_actions/edit/' . $course_id); ?>" method="post" enctype="multipart/form-data" autocomplete="off">
                             <div class="scrollable-tab-section" id="basicwizard">
 
-                                <button style = "border: 1px solid #F5F1EF ;top:2%;
+                                <button style = "border: 1px solid #F5F1EF ;top:4%;
 background-color:#F5F1EF "  type="button" class="scrollable-tab-btn-left">
                                     <i style = "color: #A5938A" class="mdi mdi-arrow-left"></i></button>
 
@@ -121,7 +121,6 @@ background-color:#F5F1EF "  type="button" class="scrollable-tab-btn-left">
                                                 <!-- <i class="mdi mdi-currency-cny"></i> -->
                                                 <span class=""><?php echo get_phrase('pricing'); ?></span>
                                             </a>
-                                            
                                         </li>
                                         <li class="nav-item">
                                             <a style ="  background: #F5F1EF;; color :#A5938A ;"href="#media" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
@@ -144,7 +143,7 @@ background-color:#F5F1EF "  type="button" class="scrollable-tab-btn-left">
                                     </ul>
                                 </div>
 
-                                <button  style = "border: 1px solid  #A5938A; top:2%;background-color:#A5938A"  type="button" class="scrollable-tab-btn-right">
+                                <button  style = "border: 1px solid  #A5938A; top:4%;background-color:#A5938A"  type="button" class="scrollable-tab-btn-right">
               <i   style = " color:#F5F1EF; "class="mdi mdi-arrow-right"></i></button>
   
                                
@@ -413,16 +412,7 @@ font-family: Outfit;font-size: 18px;font-weight: 400;line-height: 27px;text-alig
                                             </div> <!-- end col -->
                                         </div> <!-- end row -->
                                     </div> <!-- end tab pane -->
-                                    <!-- <div class="col-md-12">
-        <div style ="text-align:right;" class="form-group ">
-            
-            <button style="background:#FAF8F7 ;border-radius: 8px 0px 0px 0px;
-            border: 1px solid #F7931E ; color:#F7931E; max-width: 188px;"
-             type="button" onclick="save_bbb_meeting()" class="btn btn-info w-15 "><?php echo get_phrase('Save Meeting Info'); ?></button>
-            <button style="background: #F7931E;border-radius: 8px 0px 0px 0px;
-            border: 1px solid #FAF8F7; color:#FAF8F7; max-width: 188px;" type="button" onclick="start_bbb_meeting()" class="btn btn-success w-15"><?php echo get_phrase('Start Meeting'); ?></button>
-        </div> -->
-    </div>
+                                   
 
                                     <div class="tab-pane" id="info">
                                         <div class="row justify-content-center">
