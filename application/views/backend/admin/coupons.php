@@ -38,7 +38,7 @@
                                     <td><?php echo date('D, d-M-Y', $coupon['expiry_date']); ?></td>
                                     <td>
                                         <div class="dropright dropright">
-                                            <button type="button" class="btn btn-sm  btn-rounded btn-icon action-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <button type="button" class="btn btn-sm  btn-rounded btn-icon " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <i class="fa-solid fa-ellipsis"></i>
                                             </button>
                                             <ul class="dropdown-menu ">

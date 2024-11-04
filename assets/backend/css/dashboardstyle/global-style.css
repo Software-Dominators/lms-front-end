@@ -42,13 +42,14 @@ body {
     padding-left: 0;
 }
 /* style for page title on each page on dashboard  */
-.title {
+.page-title {
 	font-weight: 400;
 	font-size: 24px;
 	line-height: 36px;
 	color: var(--main-color--);
+	
 }
-.title-icon {
+.page-title i {
 	margin-inline-end: 16px;
 }
 /* style for add btn on each page  */
@@ -96,8 +97,8 @@ body {
 }
 .table .dropright .dropdown-menu{
 	box-shadow: 0px 4px 4px 0px #00000040;
-    max-width:142px ;
-	max-height:119px ;
+    min-width:142px ;
+	min-height:119px ;
 	border-radius:8px ;
 	
 }
@@ -217,7 +218,7 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination .page-item.previous
   border: none !important;
 }
 /* style for action-btn in table  */
-.action-btn{
+.table .dropright button{
 	
 	background-color: var(--light-orange-action-color);
 	border-radius: 8px;
@@ -234,11 +235,11 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination .page-item.previous
 	outline: none !important;
 	box-shadow: none !important;
 }
-.action-btn i {
+.table .dropright button i {
 	font-size: 10px;
 	
 }
-.action-btn:hover{
+.table .dropright button:hover{
 	background-color: var(--btn-bg-color);
 	color: var(--txt-color);
 }
