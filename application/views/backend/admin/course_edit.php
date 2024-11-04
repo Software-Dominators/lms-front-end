@@ -121,6 +121,7 @@ background-color:#F5F1EF "  type="button" class="scrollable-tab-btn-left">
                                                 <!-- <i class="mdi mdi-currency-cny"></i> -->
                                                 <span class=""><?php echo get_phrase('pricing'); ?></span>
                                             </a>
+                                            
                                         </li>
                                         <li class="nav-item">
                                             <a style ="  background: #F5F1EF;; color :#A5938A ;"href="#media" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
@@ -373,6 +374,10 @@ font-family: Outfit;font-size: 18px;font-weight: 400;line-height: 27px;text-alig
                                                             <input type="radio" id="status_active" name="status" class="custom-control-input" value="active" <?php echo $course_details['status'] == 'active' ? 'checked' : ''; ?>>
                                                             <label class="custom-control-label" for="status_active"><?php echo get_phrase('Active course'); ?></label>
                                                         </div>
+                                                        <div id="upcoming" class="custom-control custom-radio mb-1">
+                                                            <input type="radio" id="status_upcoming" name="status" class="custom-control-input" value="upcoming" <?php echo $course_details['status'] == 'upcoming' ? 'checked' : ''; ?>>
+                                                            <label class="custom-control-label" for="status_upcoming"><?php echo get_phrase('Upcoming course'); ?></label>
+                                                        </div>
 
                                                         <div class="custom-control custom-radio mb-1">
                                                             <input type="radio" id="status_private" name="status" class="custom-control-input" value="private" <?php echo $course_details['status'] == 'private' ? 'checked' : ''; ?>>
@@ -381,7 +386,7 @@ font-family: Outfit;font-size: 18px;font-weight: 400;line-height: 27px;text-alig
 
                                                         <div id="upcoming" class="custom-control custom-radio mb-1">
                                                             <input type="radio" id="status_upcoming" name="status" class="custom-control-input" value="upcoming" <?php echo $course_details['status'] == 'upcoming' ? 'checked' : ''; ?>>
-                                                            <label class="custom-control-label" for="status_upcoming"><?php echo get_phrase('Upcoming course'); ?></label>
+                                                            <label class="custom-control-label" for="status_upcoming"><?php echo get_phrase('Pending course'); ?></label>
                                                         </div>
 
                                                          <!-- New Upcoming Image -->
@@ -404,17 +409,20 @@ font-family: Outfit;font-size: 18px;font-weight: 400;line-height: 27px;text-alig
                                                     </div>
                                                 </div>
 
-                                                <div class="form-group row mb-3">
-                                                    <div class="offset-md-2 col-md-10">
-                                                        <div class="custom-control custom-checkbox">
-                                                            <input type="checkbox" class="custom-control-input" name="is_top_course" id="is_top_course" value="1" <?php if ($course_details['is_top_course'] == 1) echo 'checked'; ?>>
-                                                            <label class="custom-control-label" for="is_top_course"><?php echo get_phrase('check_if_this_course_is_top_course'); ?></label>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                               
                                             </div> <!-- end col -->
                                         </div> <!-- end row -->
                                     </div> <!-- end tab pane -->
+                                    <!-- <div class="col-md-12">
+        <div style ="text-align:right;" class="form-group ">
+            
+            <button style="background:#FAF8F7 ;border-radius: 8px 0px 0px 0px;
+            border: 1px solid #F7931E ; color:#F7931E; max-width: 188px;"
+             type="button" onclick="save_bbb_meeting()" class="btn btn-info w-15 "><?php echo get_phrase('Save Meeting Info'); ?></button>
+            <button style="background: #F7931E;border-radius: 8px 0px 0px 0px;
+            border: 1px solid #FAF8F7; color:#FAF8F7; max-width: 188px;" type="button" onclick="start_bbb_meeting()" class="btn btn-success w-15"><?php echo get_phrase('Start Meeting'); ?></button>
+        </div> -->
+    </div>
 
                                     <div class="tab-pane" id="info">
                                         <div class="row justify-content-center">

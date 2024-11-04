@@ -63,7 +63,7 @@
                                 </ul>
 
                                 <div class="tab-content b-0 mb-0">
-                                    <div class="tab-pane mt-4 bg-dager" id="basic">
+                                    <div class="tab-pane mt-4" id="basic">
                                         <div class="row justify-content-center">
                                             <div class="col-md-10">
 

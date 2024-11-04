@@ -55,6 +55,8 @@ Give some instructions to keep your students informed about the meeting</p>
             
         </div>
 </div>
+
+
     </div>
     <div class="col-md-12">
         <div style ="text-align:right;" class="form-group ">
