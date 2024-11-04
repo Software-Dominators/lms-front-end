@@ -1,5 +1,5 @@
 <?php $bbb_meeting = $this->db->where('course_id', $course_details['id'])->get('bbb_meetings')->row_array(); ?>
-<div class="row">
+<div class="row ">
     <div class="col-md-6">
         <div class="form-group">
             <label for="bbb_meeting_id"><?php echo get_phrase('Meeting ID'); ?></label>
@@ -10,7 +10,7 @@
             <label for="bbb_moderator_pw"><?php echo get_phrase('Moderator Password'); ?></label>
             <input value="<?php echo $bbb_meeting['moderator_pw'] ?? '' ?>" type="text" class="form-control" id="bbb_moderator_pw" placeholder="xxxxxx">
         </div>
-
+        
         <div class="form-group">
             <label for="bbb_viewer_pw"><?php echo get_phrase('Viewer Password'); ?></label>
             <input value="<?php echo $bbb_meeting['viewer_pw'] ?? '' ?>" type="text" class="form-control" id="bbb_viewer_pw" placeholder="xxxxxx">
