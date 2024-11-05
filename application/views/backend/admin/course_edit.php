@@ -721,7 +721,9 @@ font-family: Outfit;font-size: 18px;font-weight: 400;line-height: 27px;text-alig
                                             </div> <!-- end col -->
                                         </div> <!-- end row -->
                                     </div>
-                                    <div class="tab-pane" id="finish">
+                                    
+                                    <div class="tab-pane" id="finish"><!--     -->
+
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="text-center">
