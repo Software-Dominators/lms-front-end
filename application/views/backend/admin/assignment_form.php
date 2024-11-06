@@ -12,7 +12,6 @@
 		    <input type="text" name="assignment_title" id="assignment_title" class="form-control" placeholder="<?php echo get_phrase('enter_assignment_title'); ?>">
 		</div>
 	</div>
-
 	<div>
         <input type="hidden" name="course_id" id="course_id" value="<?php echo $course_id;?>" class="form-field" Placeholder="course_id">
     </div>

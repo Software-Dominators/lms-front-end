@@ -4,8 +4,15 @@ $course_details = $this->crud_model->get_course_by_id($course_id)->row_array();
 <div class="row ">
     <div class="col-xl-12">
         <div class="card">
-            <div class="card-body">
-                <h4 class="page-title"> <i class="mdi mdi-apple-keyboard-command title_icon"></i> <?php echo get_phrase('update') . ': ' . $course_details['title']; ?></h4>
+            <div style = "" class="card-body">
+            <i style = " color: #232F43;font-size: 27px" class="dripicons-view-apps"></i> 
+            <h4  style ="color: #8B93A1; margin-left: 16px;font-family: Outfit;font-size: 24px;
+            font-weight: 400;line-height: 36px;text-align: left;display : inline-block;" 
+                 class="page-title">  <?php echo get_phrase('Courses') ; ?></h4> 
+                 <i style = "color:#27344B ;  font-size:24px; padding:16px "  class="mdi mdi-arrow-right"></i>
+                 <h4 style ="  display: inline-block;color:#232F43;font-family: Outfit;
+                font-size: 24px;font-weight: 400;  " 
+                class="header-title my-1"><?php echo get_phrase('Educational Content (curriculum)'); ?> </h4>
             </div> <!-- end card body-->
         </div> <!-- end card -->
     </div><!-- end col-->
@@ -20,48 +27,42 @@ $course_details = $this->crud_model->get_course_by_id($course_id)->row_array();
             </div>
             <!--end ajax page loader-->
             <div class="card-body">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h4 class="header-title my-1"><?php echo get_phrase('course_manager'); ?></h4>
-                    </div>
-                    <div class="col-md-6">
-                        <a href="<?php echo site_url('admin/preview/' . $course_id); ?>" class="alignToTitle btn btn-outline-secondary btn-rounded btn-sm ml-1 my-1" target="_blank"><?php echo get_phrase('view_on_frontend'); ?> <i class="mdi mdi-arrow-right"></i> </a>
-
-                        <a href="<?php echo site_url('admin/courses'); ?>" class="alignToTitle btn btn-outline-secondary btn-rounded btn-sm my-1"> <i class=" mdi mdi-keyboard-backspace"></i> <?php echo get_phrase('back_to_course_list'); ?></a>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-xl-12">
-                        <form class="required-form" action="<?php echo site_url('admin/course_actions/edit/' . $course_id); ?>" method="post" enctype="multipart/form-data" autocomplete="off">
+             
+ <div class="row">
+     <div class="col-xl-12">
+         <form class="required-form" action="<?php echo site_url('admin/course_actions/edit/' . $course_id); ?>" method="post" enctype="multipart/form-data" autocomplete="off">
                             <div class="scrollable-tab-section" id="basicwizard">
 
-                                <button type="button" class="scrollable-tab-btn-left"><i class="mdi mdi-arrow-left"></i></button>
+  <button style = "border: 1px solid #F5F1EF ;top:4%;background-color:#F5F1EF " 
+   type="button" class="scrollable-tab-btn-left">
+    <i style = "color: #A5938A" class="mdi mdi-arrow-left"></i></button>
 
-                                <div class="scrollable-tab">
-                                    <ul class="nav nav-pills nav-justified form-wizard-header">
+  <div  style = "padding:8px;"  class="scrollable-tab">
+                                    <ul  style = " height: 56px"class="nav nav-pills nav-justified form-wizard-header">
                                         <li class="nav-item">
-                                            <a href="#curriculum" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
-                                                <i class="mdi mdi-account-circle"></i>
-                                                <span class=""><?php echo get_phrase('curriculum'); ?></span>
+                                            <a style ="     min-width: 250px;
+                                             background : #A5938A; color : #F5F1EF;"
+                                            href="#curriculum" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
+                                                <!-- <i class="mdi mdi-account-circle"></i> -->
+                                                <span class=""><?php echo get_phrase('Eductional Content(curriculum)'); ?></span>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#academic_progress" onclick="student_academic_progress('<?php echo $course_details['id']; ?>')" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
-                                                <i class="mdi mdi-chart-bar-stacked"></i>
+                                            <a   style ="  background: #F5F1EF;; color :#A5938A ;"href="#academic_progress" onclick="student_academic_progress('<?php echo $course_details['id']; ?>')" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
+                                                <!-- <i class="mdi mdi-chart-bar-stacked"></i> -->
                                                 <span class=""><?php echo get_phrase('Academic progress'); ?></span>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#bbb-live-class" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
-                                                <i class="mdi mdi-video-account"></i>
+                                            <a  style ="  background: #F5F1EF;; color :#A5938A ;"href="#bbb-live-class" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
+                                                <!-- <i class="mdi mdi-video-account"></i> -->
                                                 <span class=""><?php echo get_phrase('BBB live class'); ?></span>
                                             </a>
                                         </li>
                                         <?php if (addon_status('live-class')) : ?>
                                             <li class="nav-item">
-                                                <a href="#live-class" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
-                                                    <i class="mdi mdi-video-account"></i>
+                                                <a  style ="  background: #F5F1EF;; color :#A5938A ;"href="#live-class" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
+                                                    <!-- <i class="mdi mdi-video-account"></i> -->
                                                     <span class=""><?php echo get_phrase('zoom_live_class'); ?></span>
                                                 </a>
                                             </li>
@@ -69,8 +70,8 @@ $course_details = $this->crud_model->get_course_by_id($course_id)->row_array();
 
                                         <?php if (addon_status('jitsi-live-class')) : ?>
                                             <li class="nav-item jitsiLiveClassNavItem">
-                                                <a href="#jitsi-live-class" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
-                                                    <i class="mdi mdi-video-account"></i>
+                                                <a style ="  background: #F5F1EF;; color :#A5938A ;" href="#jitsi-live-class" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
+                                                    <!-- <i class="mdi mdi-video-account"></i> -->
                                                     <span class=""><?php echo get_phrase('jitsi_live_class'); ?></span>
                                                 </a>
                                             </li>
@@ -78,8 +79,8 @@ $course_details = $this->crud_model->get_course_by_id($course_id)->row_array();
 
                                         <?php if (addon_status('assignment')) : ?>
                                             <li class="nav-item">
-                                                <a href="#assignment" onclick="load_assignment_list()" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
-                                                    <i class="dripicons-document"></i>
+                                                <a  style ="  background: #F5F1EF;; color :#A5938A ;"href="#assignment" onclick="load_assignment_list()" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
+                                                    <!-- <i class="dripicons-document"></i> -->
                                                     <span class=""><?php echo get_phrase('assignment'); ?></span>
                                                 </a>
                                             </li>
@@ -87,8 +88,8 @@ $course_details = $this->crud_model->get_course_by_id($course_id)->row_array();
 
                                         <?php if (addon_status('noticeboard')) : ?>
                                             <li class="nav-item">
-                                                <a href="#noticeboard" onclick="load_notic_list()" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
-                                                    <i class="mdi mdi-clipboard-text-outline"></i>
+                                                <a style ="  background: #F5F1EF;; color :#A5938A ;" href="#noticeboard" onclick="load_notic_list()" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
+                                                    <!-- <i class="mdi mdi-clipboard-text-outline"></i> -->
                                                     <span class=""><?php echo get_phrase('noticeboard'); ?></span>
                                                 </a>
                                             </li>
@@ -96,55 +97,57 @@ $course_details = $this->crud_model->get_course_by_id($course_id)->row_array();
 
                                         <?php if (addon_status('course_analytics')) : ?>
                                             <li class="nav-item">
-                                                <a href="#course_analytics" onclick="load_analytics_chart()" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
-                                                    <i class="mdi mdi-chart-bar"></i>
+                                                <a  style ="  background: #F5F1EF;; color :#A5938A ;"href="#course_analytics" onclick="load_analytics_chart()" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
+                                                    <!-- <i class="mdi mdi-chart-bar"></i> -->
                                                     <span class=""><?php echo get_phrase('analytics'); ?></span>
                                                 </a>
                                             </li>
                                         <?php endif; ?>
 
                                         <li class="nav-item">
-                                            <a href="#basic" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
-                                                <i class="mdi mdi-fountain-pen-tip"></i>
+                                            <a  style ="  background: #F5F1EF;; color :#A5938A ;"href="#basic" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
+                                                <!-- <i class="mdi mdi-fountain-pen-tip"></i> -->
                                                 <span class=""><?php echo get_phrase('basic'); ?></span>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#info" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
-                                                <i class="mdi mdi-information-outline"></i>
+                                            <a style ="  background: #F5F1EF;; color :#A5938A ;"href="#info" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
+                                                <!-- <i class="mdi mdi-information-outline"></i> -->
                                                 <span class=""><?php echo get_phrase('info'); ?></span>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#pricing" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
-                                                <i class="mdi mdi-currency-cny"></i>
+                                            <a style ="  background: #F5F1EF;; color :#A5938A ;"href="#pricing" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
+                                                <!-- <i class="mdi mdi-currency-cny"></i> -->
                                                 <span class=""><?php echo get_phrase('pricing'); ?></span>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#media" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
-                                                <i class="mdi mdi-library-video"></i>
+                                            <a style ="  background: #F5F1EF;; color :#A5938A ;"href="#media" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
+                                                <!-- <i class="mdi mdi-library-video"></i> -->
                                                 <span class=""><?php echo get_phrase('media'); ?></span>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#seo" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
-                                                <i class="mdi mdi-tag-multiple"></i>
+                                            <a style ="  background: #F5F1EF;; color :#A5938A ;"href="#seo" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
+                                                <!-- <i class="mdi mdi-tag-multiple"></i> -->
                                                 <span class=""><?php echo get_phrase('seo'); ?></span>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#finish" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
-                                                <i class="mdi mdi-checkbox-marked-circle-outline"></i>
+                                            <a style ="  background: #F5F1EF;; color :#A5938A ;" href="#finish" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
+                                                <!-- <i class="mdi mdi-checkbox-marked-circle-outline"></i> -->
                                                 <span class=""><?php echo get_phrase('finish'); ?></span>
                                             </a>
                                         </li>
                                     </ul>
                                 </div>
 
-                                <button type="button" class="scrollable-tab-btn-right"><i class="mdi mdi-arrow-right"></i></button>
-
-                                <div class="tab-content b-0 mb-0">
+                                <button  style = "border: 1px solid  #A5938A; top:4%;background-color:#A5938A"  type="button" class="scrollable-tab-btn-right">
+              <i   style = " color:#F5F1EF; "class="mdi mdi-arrow-right"></i></button>
+  
+                               
+                           <div class="tab-content b-0 mb-0">
                                     <div class="tab-pane" id="curriculum">
                                         <?php
                                         if ($course_details['course_type'] == 'general') :
@@ -221,22 +224,26 @@ $course_details = $this->crud_model->get_course_by_id($course_id)->row_array();
                                     <!-- COURSE ANALYTICS CODE BASE -->
 
                                     <div class="tab-pane" id="basic">
-                                        <div class="row justify-content-center">
+                                        <div class="row ">
                                             <div class="col-xl-8">
+            <label style ="//styleName: Reg/18;
+font-family: Outfit;font-size: 18px;font-weight: 400;line-height: 27px;text-align: left; color:#868686;" class="col-md-2 col-form-label" for="course_type"><?php echo get_phrase('course_type'); ?></label>
+
                                                 <div class="form-group row mb-3">
-                                                    <label class="col-md-2 col-form-label" for="course_type"><?php echo get_phrase('course_type'); ?></label>
-                                                    <div class="col-md-10">
-                                                        <div class="alert alert-light" role="alert">
-                                                            <h4 class="alert-heading"><?= get_phrase($course_details['course_type']); ?></h4>
-                                                            <hr class="m-1">
-                                                            <p class="mb-0"><?= get_phrase('the_course_type_can_not_be_editable'); ?>.</p>
+                                                   
+                                                    <div  class="col-md-10">
+            <div style ="background-color:#EEF6FD"; class="alert alert-light" role="alert">
+                                                            
+          <p class="mb-0"><?= get_phrase('Course type can not be changed'); ?>.</p>
                                                         </div>
                                                     </div>
                                                 </div>
+<label class="col-md-5 col-form-label" for="existing_instructors"><?php echo get_phrase('instructor_of_this_course'); ?></label>
 
-                                                <div class="form-group row mb-3">
-                                                    <label class="col-md-2 col-form-label" for="existing_instructors"><?php echo get_phrase('instructor_of_this_course'); ?></label>
-                                                    <div class="col-md-10">
+                              <div class="form-group row mb-3">
+
+                             
+                                                 <div class="col-md-10">
                                                         <?php if ($course_details['multi_instructor']) :
                                                             $instructor_ids = explode(',', $course_details['user_id']);
                                                         ?>
@@ -246,7 +253,7 @@ $course_details = $this->crud_model->get_course_by_id($course_id)->row_array();
                                                                 <div class="m-2">
                                                                     <img class="rounded-circle" src="<?php echo $this->user_model->get_user_image_url($instructor_details['id']);; ?>" height="30px" alt="">
                                                                     <span style="font-weight: 700; font-size: 15px; vertical-align: sub; margin-left: 6px;">
-                                                                        <?php echo html_escape($instructor_details['first_name'] . ' ' . $instructor_details['last_name']); ?>
+                                                                    id="bbb_meeting_id"              <?php echo html_escape($instructor_details['first_name'] . ' ' . $instructor_details['last_name']); ?>
                                                                     </span>
                                                                     <?php if (count($instructor_ids) > 1 && $course_details['creator'] != $instructor_id) : ?>
                                                                         <a class="btn text-danger mt-1" href="javascript:void(0)" onclick="confirm_modal('<?php echo site_url('admin/remove_an_instructor/' . $course_details['id'] . '/' . $instructor_details['id']); ?>');"> <i class="mdi mdi-delete"></i> <?php echo get_phrase('Remove'); ?></a>
@@ -266,11 +273,22 @@ $course_details = $this->crud_model->get_course_by_id($course_id)->row_array();
                                                         <?php endif; ?>
                                                     </div>
                                                 </div>
-
+                                                <label class="col-md-5 col-form-label" for="new_instructor"><?php echo get_phrase('add_new_instructor'); ?></label>
+                                                
                                                 <div class="form-group row mb-3">
-                                                    <label class="col-md-2 col-form-label" for="new_instructor"><?php echo get_phrase('add_new_instructor'); ?></label>
+
+
+
+
+
+
+
+
+                                        
                                                     <div class="col-md-10">
-                                                        <select class="select2 form-control select2-multiple" data-toggle="select2" multiple="multiple" data-placeholder="Choose ..." name="new_instructors[]">
+                                                        <select class="select2 form-control select2-multiple"
+                                                         data-toggle="select2"  
+                                                         data-placeholder="choose instructor" name="new_instructors[]" >
                                                             <?php $instructors = $this->user_model->get_instructor()->result_array(); ?>
                                                             <?php foreach ($instructors as $key => $instructor) : ?>
                                                                 <option value="<?php echo html_escape($instructor['id']); ?>"><?php echo html_escape($instructor['first_name'] . ' ' . $instructor['last_name']); ?> ( <?php echo html_escape($instructor['email']); ?> )</option>
@@ -278,26 +296,34 @@ $course_details = $this->crud_model->get_course_by_id($course_id)->row_array();
                                                         </select>
                                                     </div>
                                                 </div>
+                                                <label class="col-md-2 col-form-label" for="course_title"><?php echo get_phrase('course_title'); ?><span class="required">*</span></label>
                                                 <div class="form-group row mb-3">
-                                                    <label class="col-md-2 col-form-label" for="course_title"><?php echo get_phrase('course_title'); ?><span class="required">*</span></label>
+                                                   
                                                     <div class="col-md-10">
-                                                        <input type="text" class="form-control" id="course_title" name="title" placeholder="<?php echo get_phrase('enter_course_title'); ?>" value="<?php echo $course_details['title']; ?>" required>
+                                                        <input type="text" class="form-control" id="course_title" name="title" placeholder="<?php echo get_phrase('Intro to front end'); ?>" value="<?php echo $course_details['title']; ?>" required>
                                                     </div>
                                                 </div>
+                                                <label class="col-md-2 col-form-label" for="short_description"><?php echo get_phrase('short_description'); ?></label>
                                                 <div class="form-group row mb-3">
-                                                    <label class="col-md-2 col-form-label" for="short_description"><?php echo get_phrase('short_description'); ?></label>
+                                                    
                                                     <div class="col-md-10">
-                                                        <textarea name="short_description" id="short_description" class="form-control"><?php echo $course_details['short_description']; ?></textarea>
+                                                        <textarea name="short_description" id="short_description" class="form-control"><?php echo $course_details['short_description']; ?>Intro to front end</textarea>
                                                     </div>
                                                 </div>
+                                                <label class="col-md-2 col-form-label" for="description"><?php echo get_phrase('description'); ?></label>
                                                 <div class="form-group row mb-3">
-                                                    <label class="col-md-2 col-form-label" for="description"><?php echo get_phrase('description'); ?></label>
+
                                                     <div class="col-md-10">
-                                                        <textarea name="description" id="description" class="form-control"><?php echo $course_details['description']; ?></textarea>
+
+
+
+                                                    
+                                                        <textarea style="color: #AEAEAE; width: 709.8px;height: 189px;padding: 10px 8px 10px 16px;gap: 0px;border-radius: 8px 0px 0px 0px;border: 1px 0px 0px 0px;justify: space-between;opacity: 0px;border: 1px solid #D6D6D6"  name="description" id="description" class="form-control"><?php echo $course_details['description']; ?>Intro to front end</textarea>
                                                     </div>
                                                 </div>
+                                                 <label class="col-md-2 col-form-label" for="sub_category_id"><?php echo get_phrase('category'); ?><span class="required">*</span></label>
                                                 <div class="form-group row mb-3">
-                                                    <label class="col-md-2 col-form-label" for="sub_category_id"><?php echo get_phrase('category'); ?><span class="required">*</span></label>
+                                                   
                                                     <div class="col-md-10">
                                                         <select class="form-control select2" data-toggle="select2" name="sub_category_id" id="sub_category_id" required>
                                                             <option value=""><?php echo get_phrase('select_a_category'); ?></option>
@@ -313,8 +339,10 @@ $course_details = $this->crud_model->get_course_by_id($course_id)->row_array();
                                                         <small class="text-muted"><?php echo get_phrase('select_sub_category'); ?></small>
                                                     </div>
                                                 </div>
+                                                <label class="col-md-5 col-form-label" for="level"><?php echo get_phrase('Level'); ?></label>
+                                                
                                                 <div class="form-group row mb-3">
-                                                    <label class="col-md-2 col-form-label" for="level"><?php echo get_phrase('level'); ?></label>
+                                                    
                                                     <div class="col-md-10">
                                                         <select class="form-control select2" data-toggle="select2" name="level" id="level">
                                                             <option value="beginner" <?php if ($course_details['level'] == "beginner") echo 'selected'; ?>><?php echo get_phrase('beginner'); ?></option>
@@ -323,8 +351,9 @@ $course_details = $this->crud_model->get_course_by_id($course_id)->row_array();
                                                         </select>
                                                     </div>
                                                 </div>
+                                                <label class="col-md-5 col-form-label" for="language_made_in"><?php echo get_phrase('Course language'); ?></label>
                                                 <div class="form-group row mb-3">
-                                                    <label class="col-md-2 col-form-label" for="language_made_in"><?php echo get_phrase('language_made_in'); ?></label>
+                                                   
                                                     <div class="col-md-10">
                                                         <select class="form-control select2" data-toggle="select2" name="language_made_in" id="language_made_in">
                                                             <?php foreach ($languages as $language) : ?>
@@ -334,10 +363,10 @@ $course_details = $this->crud_model->get_course_by_id($course_id)->row_array();
                                                     </div>
                                                 </div>
                                                 <div class="form-group row mb-3">
-                                                    <label class="col-md-2 col-form-label" for="enable_drip_content"><?php echo get_phrase('enable_drip_content'); ?></label>
-                                                    <div class="col-md-10 pt-2">
+                                                    <label class="col-md-3 col-form-label" for="enable_drip_content"><?php echo get_phrase('enable_drip_content'); ?></label>
+                                                    <div class="col-md-9 pt-2">
                                                         <input type="checkbox" name="enable_drip_content" value="1" id="enable_drip_content" data-switch="primary" <?php if ($course_details['enable_drip_content'] == 1) echo 'checked'; ?>>
-                                                        <label for="enable_drip_content" data-on-label="On" data-off-label="Off"></label>
+                                                        <label for="enable_drip_content" data-on-label="On" data-off-label=""></label>
                                                     </div>
                                                 </div>
 
@@ -348,6 +377,10 @@ $course_details = $this->crud_model->get_course_by_id($course_id)->row_array();
                                                             <input type="radio" id="status_active" name="status" class="custom-control-input" value="active" <?php echo $course_details['status'] == 'active' ? 'checked' : ''; ?>>
                                                             <label class="custom-control-label" for="status_active"><?php echo get_phrase('Active course'); ?></label>
                                                         </div>
+                                                        <div id="upcoming" class="custom-control custom-radio mb-1">
+                                                            <input type="radio" id="status_upcoming" name="status" class="custom-control-input" value="upcoming" <?php echo $course_details['status'] == 'upcoming' ? 'checked' : ''; ?>>
+                                                            <label class="custom-control-label" for="status_upcoming"><?php echo get_phrase('Upcoming course'); ?></label>
+                                                        </div>
 
                                                         <div class="custom-control custom-radio mb-1">
                                                             <input type="radio" id="status_private" name="status" class="custom-control-input" value="private" <?php echo $course_details['status'] == 'private' ? 'checked' : ''; ?>>
@@ -356,7 +389,7 @@ $course_details = $this->crud_model->get_course_by_id($course_id)->row_array();
 
                                                         <div id="upcoming" class="custom-control custom-radio mb-1">
                                                             <input type="radio" id="status_upcoming" name="status" class="custom-control-input" value="upcoming" <?php echo $course_details['status'] == 'upcoming' ? 'checked' : ''; ?>>
-                                                            <label class="custom-control-label" for="status_upcoming"><?php echo get_phrase('Upcoming course'); ?></label>
+                                                            <label class="custom-control-label" for="status_upcoming"><?php echo get_phrase('Pending course'); ?></label>
                                                         </div>
 
                                                          <!-- New Upcoming Image -->
@@ -379,17 +412,11 @@ $course_details = $this->crud_model->get_course_by_id($course_id)->row_array();
                                                     </div>
                                                 </div>
 
-                                                <div class="form-group row mb-3">
-                                                    <div class="offset-md-2 col-md-10">
-                                                        <div class="custom-control custom-checkbox">
-                                                            <input type="checkbox" class="custom-control-input" name="is_top_course" id="is_top_course" value="1" <?php if ($course_details['is_top_course'] == 1) echo 'checked'; ?>>
-                                                            <label class="custom-control-label" for="is_top_course"><?php echo get_phrase('check_if_this_course_is_top_course'); ?></label>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                               
                                             </div> <!-- end col -->
                                         </div> <!-- end row -->
                                     </div> <!-- end tab pane -->
+                                    
 
                                     <div class="tab-pane" id="info">
                                         <div class="row justify-content-center">
@@ -639,11 +666,12 @@ $course_details = $this->crud_model->get_course_by_id($course_id)->row_array();
                                         </div> <!-- end row -->
                                     </div> <!-- end tab-pane -->
                                     <div class="tab-pane" id="media">
-                                        <div class="row justify-content-center">
+                                        <div class="row ">
 
                                             <div class="col-xl-8">
+                                            <label class="col-md-5 col-form-label" for="course_overview_provider"><?php echo get_phrase('course_overview_provider'); ?></label>
                                                 <div class="form-group row mb-3">
-                                                    <label class="col-md-2 col-form-label" for="course_overview_provider"><?php echo get_phrase('course_overview_provider'); ?></label>
+                                                   
                                                     <div class="col-md-10">
                                                         <select class="form-control select2" data-toggle="select2" name="course_overview_provider" id="course_overview_provider">
                                                             <option value="youtube" <?php if ($course_details['course_overview_provider'] == 'youtube') echo 'selected'; ?>><?php echo get_phrase('youtube'); ?></option>
@@ -655,8 +683,9 @@ $course_details = $this->crud_model->get_course_by_id($course_id)->row_array();
                                             </div> <!-- end col -->
 
                                             <div class="col-xl-8">
+                                            <label class="col-md-5 col-form-label" for="course_overview_url"><?php echo get_phrase('course_overview_url'); ?></label>
                                                 <div class="form-group row mb-3">
-                                                    <label class="col-md-2 col-form-label" for="course_overview_url"><?php echo get_phrase('course_overview_url'); ?></label>
+                                                   
                                                     <div class="col-md-10">
                                                         <input type="text" class="form-control" name="course_overview_url" id="course_overview_url" placeholder="E.g: https://www.youtube.com/watch?v=oBtf8Yglw2w" value="<?php echo $course_details['video_url'] ?>">
                                                     </div>
@@ -669,20 +698,24 @@ $course_details = $this->crud_model->get_course_by_id($course_id)->row_array();
                                         </div> <!-- end row -->
                                     </div>
                                     <div class="tab-pane" id="seo">
-                                        <div class="row justify-content-center">
+                                        <div class="row ">
                                             <div class="col-xl-8">
+                                            <label class="col-md-2 col-form-label" for="website_keywords"><?php echo get_phrase('meta_keywords'); ?></label>
                                                 <div class="form-group row mb-3">
-                                                    <label class="col-md-2 col-form-label" for="website_keywords"><?php echo get_phrase('meta_keywords'); ?></label>
-                                                    <div class="col-md-10">
-                                                        <input type="text" class="form-control bootstrap-tag-input" id="meta_keywords" name="meta_keywords" data-role="tagsinput" style="width: 100%;" value="<?php echo $course_details['meta_keywords']; ?>" placeholder="<?php echo get_phrase('write_a_keyword_and_then_press_enter_button'); ?>" . />
+                                                   
+                                                <div class="col-md-10">
+                                                        <input type="text" class="form-control" name="course_overview_url" id="course_overview_url" placeholder="Youtube" value="<?php echo $course_details['video_url'] ?>">
                                                     </div>
                                                 </div>
                                             </div> <!-- end col -->
                                             <div class="col-xl-8">
+                                            <label class="col-md-2 col-form-label" for="meta_description"><?php echo get_phrase('meta_description'); ?></label>
                                                 <div class="form-group row mb-3">
-                                                    <label class="col-md-2 col-form-label" for="meta_description"><?php echo get_phrase('meta_description'); ?></label>
+                                                   
                                                     <div class="col-md-10">
-                                                        <textarea name="meta_description" class="form-control"><?php echo $course_details['meta_description']; ?></textarea>
+                                                        <textarea 
+                                                        style ="color: #AEAEAE; width: 709.9px;height: 94px;padding: 10px 8px 10px 16px;gap: 0px;border-radius: 8px 0px 0px 0px;border: 1px 0px 0px 0px;justify: space-between;opacity: 0px;border: 1px solid #D6D6D6"
+                                                        name="meta_description" class="form-control"><?php echo $course_details['meta_description']; ?>Youtube</textarea>
                                                     </div>
                                                 </div>
                                             </div> <!-- end col -->

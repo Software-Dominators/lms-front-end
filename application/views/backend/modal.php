@@ -57,7 +57,7 @@ function showLargeModal(url, header)
 <div class="modal-dialog modal-dialog-scrollable" role="document">
     <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title" id="scrollableModalTitle">Modal title</h5>
+            <h5 class="modal-title" id="scrollableModalTitle">Add section (No :4) </h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -73,30 +73,126 @@ function showLargeModal(url, header)
 </div>
 
 <script type="text/javascript">
+    // function for delete 
 function confirm_modal(delete_url)
 {
     jQuery('#alert-modal').modal('show', {backdrop: 'static'});
     document.getElementById('update_link').setAttribute('href' , delete_url);
 }
+// for add coupon modal 
+function add_coupon_modal(add_url)
+{
+    jQuery('#add-modal').modal('show', {backdrop: 'static'});
+    document.getElementById('update_link').setAttribute('href' , delete_url);
+}
+// for edit coupon modal 
+function edit_coupon_modal(edit_url)
+{
+    jQuery('#edit-modal').modal('show', {backdrop: 'static'});
+    document.getElementById('update_link').setAttribute('href' , delete_url);
+}
 </script>
 
-<!-- Info Alert Modal -->
-<div id="alert-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-sm">
+<!-- delete coupon modal  -->
+<div id="alert-modal" class="modal fade delete-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-body p-4">
                 <div class="text-center">
-                    <i class="dripicons-information h1 text-info"></i>
-                    <h4 class="mt-2"><?php echo get_phrase("heads_up"); ?>!</h4>
-                    <p class="mt-3"><?php echo get_phrase("are_you_sure"); ?>?</p>
-                    <button type="button" class="btn btn-info my-2" data-dismiss="modal"><?php echo get_phrase("cancel"); ?></button>
-                    <a href="#" id="update_link" class="btn btn-danger my-2"><?php echo get_phrase("continue"); ?></a>
+                    <div class="error-icon">
+                    <i class="fa-solid fa-exclamation"></i>
+                    </div>
+               
+                    <h4 class=" header"><?php echo get_phrase("heads_up"); ?>!</h4>
+                    <p class=""><?php echo get_phrase("are_you_sure"); ?>?</p>
+                    <div class="action-btns d-flex">
+                    <button type="button" class="cancel-btn" data-dismiss="modal"><?php echo get_phrase("cancel"); ?></button>
+                    <a href="#" id="update_link" class="delete-btn"><?php echo get_phrase("continue"); ?></a>
+                    </div>
+               
                 </div>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+</div>
+<!-- add coupon modal ------------------------------------------------------- -->
+<div id="add-modal" class="modal fade add-coupon " tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body p-4">
+            <h4 class=" header-title"><?php echo get_phrase('coupon_add_form'); ?></h4>
+            <form class="required-form" action="<?php echo site_url('admin/coupons/add'); ?>" method="post" enctype="multipart/form-data">
 
+<div class="form-group">
+    <label for="code"><?php echo get_phrase('coupon_code'); ?><span class="required">*</span></label>
+    <div class="input-group">
+        <input type="text" class="form-control" id="code" name="code" required>
+        <div class="input-group-append">
+            <button type="button" class="btn btn-sm " data-toggle="tooltip" data-placement="top" title="" data-original-title="<?php echo get_phrase('generate_a_random_coupon_code'); ?>" onclick="generateARandomCouponCode()"><i class="mdi mdi-sync"></i> <?php echo get_phrase('generate_random'); ?></button>
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="discount_percentage"><?php echo get_phrase('discount_percentage'); ?></label>
+    <div class="input-group">
+        <input type="number" name="discount_percentage" id="discount_percentage" class="form-control" value="0" min="1" max="100">
+        <div class="input-group-append">
+            <span class="input-group-text"><i class="mdi mdi-percent"></i></span>
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="expiry_date"><?php echo get_phrase('expiry_date'); ?><span class="required">*</span></label>
+    <input type="text" name="expiry_date" class="form-control date" id="expiry_date" data-toggle="date-picker" data-single-date-picker="true">
+</div>
+<div class="action-btns d-flex">
+<button type="button" class="cancel-btn" data-dismiss="modal"><?php echo get_phrase("cancel"); ?></button>
+<button type="submit" class="submit-btn"><?php echo get_phrase("submit"); ?></button>
+</div>
+</form>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+<!-- edit coupon modal ------------------------------------------------------ -->
+<div id="edit-modal" class="modal fade edit-coupon" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body p-4">
+            <h4 class=" header-title"><?php echo get_phrase('coupon_edit_form'); ?></h4>
+            <form class="required-form" action="<?php echo site_url('admin/coupons/edit/' . $coupon['id']); ?>" method="post" enctype="multipart/form-data">
+
+<div class="form-group">
+    <label for="code"><?php echo get_phrase('coupon_code'); ?><span class="required">*</span></label>
+    <input type="text" class="form-control" id="code" name="code" value="<?php echo $coupon['code']; ?>" required>
+</div>
+
+<div class="form-group">
+    <label for="discount_percentage"><?php echo get_phrase('discount_percentage'); ?></label>
+    <div class="input-group">
+        <input type="number" name="discount_percentage" id="discount_percentage" class="form-control" value="<?php echo $coupon['discount_percentage']; ?>" min="1" max="100">
+        <div class="input-group-append">
+            <span class="input-group-text"><i class="mdi mdi-percent"></i></span>
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="expiry_date"><?php echo get_phrase('expiry_date'); ?><span class="required">*</span></label>
+    <input type="text" name="expiry_date" class="form-control date" id="expiry_date" data-toggle="date-picker" data-single-date-picker="true" value="<?php echo date('m/d/Y', $coupon['expiry_date']); ?>">
+</div>
+
+<div class="action-btns d-flex">
+<button type="button" class="cancel-btn" data-dismiss="modal"><?php echo get_phrase("cancel"); ?></button>
+<button type="submit" class="submit-btn"><?php echo get_phrase("submit"); ?></button>
+</div>
+
+</form>   </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
 <!-- Info Alert Modal -->
 <div id="data-import-alert-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-sm">

@@ -1,5 +1,5 @@
 <div class="row ">
-    <div class="col-xl-12">
+    <div class="col-xl-12 b">
         <div class="card">
             <div class="card-body">
                 <h4 class="page-title"> <i class="mdi mdi-apple-keyboard-command title_icon"></i> <?php echo $page_title; ?>

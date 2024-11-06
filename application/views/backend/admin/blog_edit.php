@@ -17,7 +17,7 @@
     			<h4 class='mb-3'><?php echo get_phrase('edit_your_blog'); ?></h4>
 		    	<form action="<?php echo site_url('admin/blog/update/'.$blog['blog_id']); ?>" method="post" enctype="multipart/form-data">
 		    		<div class="form-group">
-		    			<label for="title"><?php echo get_phrase('title'); ?></label>
+		    			<label for="title"><?php echo get_phrase('htitle'); ?></label>
 		    			<input type="text" class="form-control" value="<?php echo $blog['title']; ?>" name="title" id="title" placeholder="<?php echo get_phrase('enter_blog_title'); ?>" required>
 		    		</div>
 
