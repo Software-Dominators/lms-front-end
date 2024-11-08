@@ -205,7 +205,6 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination .page-item a {
 div.dataTables_wrapper div.dataTables_paginate ul.pagination .page-item.previous , div.dataTables_wrapper div.dataTables_paginate ul.pagination .page-item.next{
 	border: 1px solid var(--btn-bg-color);
 	color:var(--btn-bg-color);
-	
 }
 div.dataTables_wrapper div.dataTables_paginate ul.pagination .page-item.previous.disabled , div.dataTables_wrapper div.dataTables_paginate ul.pagination .page-item.next.disabled{
 	background-color: #E4E4E4;
