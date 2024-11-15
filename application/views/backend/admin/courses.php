@@ -7,7 +7,7 @@
                 </h4>
             </div> <!-- end card body-->
         </div> <!-- end card -->
-    </div><!-- end col-->
+    </div><!-- end col table-->
 </div>
 <div class="row">
     <div class="col-12">
@@ -18,7 +18,6 @@
                         <a href="<?php echo site_url('admin/courses?category_id=all&status=active&instructor_id=all&price=all&button='); ?>" class="text-secondary">
                             <div class="card shadow-none m-0">
                                 <div class="card-body text-center">
-                                    <i class="dripicons-link text-muted" style="font-size: 24px;"></i>
                                     <h3><span><?php echo $status_wise_courses['active']->num_rows(); ?></span></h3>
                                     <p class="text-muted font-15 mb-0"><?php echo get_phrase('active_courses'); ?></p>
                                 </div>
@@ -67,6 +66,9 @@
         </div> <!-- end card-box-->
     </div> <!-- end col-->
 </div>
+
+
+
 <div class="row">
     <div class="col-xl-12">
         <div class="card">

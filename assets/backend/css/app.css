@@ -9088,6 +9088,8 @@ body[data-layout="detached"] .footer {
     text-decoration: none;
     background-color: rgba(255, 188, 0, 0.4); }
 
+    /* .card .card-widgets */
+
 .badge-danger-lighten {
   color: #fa5c7c;
   background-color: rgba(250, 92, 124, 0.18); }
@@ -9128,8 +9130,9 @@ body[data-layout="detached"] .footer {
     line-height: 0;
     color: inherit; }
   .card .card-widgets {
-    float: right;
-    height: 16px; }
+    float: right !important;
+    height: auto !important; 
+  }
     .card .card-widgets > a {
       color: inherit;
       font-size: 18px;
@@ -9185,6 +9188,8 @@ body[data-layout="detached"] .footer {
     -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
             transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg); } }
 
+
+          
 .card-pricing {
   position: relative; }
   .card-pricing .card-pricing-plan-name {

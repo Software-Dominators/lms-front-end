@@ -9128,14 +9128,17 @@ body[data-layout="detached"] .footer {
     font-size: 20px;
     line-height: 0;
     color: inherit; }
+    
   .card .card-widgets {
-    float: right;
-    height: 16px; }
+    float: right !important;
+    height: auto !important;
+   }
     .card .card-widgets > a {
       color: inherit;
-      font-size: 18px;
+      font-size: 16px;
       display: inline-block;
-      line-height: 1; }
+      line-height: 1; 
+    }
       .card .card-widgets > a.collapsed i:before {
         content: "\F415"; }
 

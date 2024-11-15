@@ -14,6 +14,7 @@
 	--error-color:#E81010;
 	--main-font-- : "Outfit", sans-serif !important;
 	--table-head-bg-color:#FAFAFB;
+	--td-color:#2B3A53;
 	}
     
 * {
@@ -52,6 +53,13 @@ body {
 .page-title img {
 	margin-inline-end: 16px;
 }
+.page-title span {
+	color: #8B93A1;
+	
+}
+.page-title span i {
+	margin: 0 16px;
+}
 /* style for add btn on each page  */
 .add-btn {
 	font-weight: 500;
@@ -59,8 +67,9 @@ body {
 	line-height: 27px;
     background-color: transparent;
 	border: 1px solid var(--btn-bg-color);
-	max-width: 171px;
+	min-width: 171px !important;
 	padding: 8px ;
+	text-align: center;
 	border-radius: 8px;
 	color: var(--btn-bg-color);
 	transition: 0.25s all;
@@ -84,6 +93,11 @@ body {
 .table{
 	box-shadow: 0px -1px 0px 0px #EDF2F7 inset !important;
 
+}
+.table tbody{
+	color: #2B3A53;
+	font-weight: 900;
+	font-size: 60px;
 }
 .table thead{
 	background-color: var(--table-head-bg-color);
@@ -115,10 +129,16 @@ body {
 }
 /* th style on table  */
 th {
-	font-weight: 300;
-	font-size: 14px;
-	line-height: 21px;
-	color: var(--th-color);
+	font-weight: 300 !important;
+	font-size: 14px !important;
+	line-height: 21px !important;
+	color: var(--th-color) !important;
+}
+td {
+	font-weight: 500 !important;
+	font-size: 14px !important;
+	line-height: 27px !important;
+	color: var(--td-color) !important;
 }
 /* new style for filteration (search inputs and entries above table) */
 /* new-style for dataTables  */
@@ -205,11 +225,12 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination .page-item a {
 div.dataTables_wrapper div.dataTables_paginate ul.pagination .page-item.previous , div.dataTables_wrapper div.dataTables_paginate ul.pagination .page-item.next{
 	border: 1px solid var(--btn-bg-color);
 	color:var(--btn-bg-color);
-	
 }
-div.dataTables_wrapper div.dataTables_paginate ul.pagination .page-item.previous.disabled , div.dataTables_wrapper div.dataTables_paginate ul.pagination .page-item.next.disabled{
-	background-color: #E4E4E4;
-	border: none;
+div.dataTables_wrapper div.dataTables_paginate ul.pagination .page-item.previous.disabled ,
+ div.dataTables_wrapper div.dataTables_paginate ul.pagination .page-item.next.disabled ,
+ #server_side_users_data_previous .page-item.previous.disabled ,  #server_side_users_data_previous .page-item.next.disabled{
+	background-color: #E4E4E4 !important;
+	border: none !important;
 	
 }
 .pagination-rounded .page-link {

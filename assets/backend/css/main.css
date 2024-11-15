@@ -225,10 +225,17 @@ i.material-icons {
     cursor: all-scroll;
 }
 .thinner-card-body {
-  padding: 1.0rem;
+  /* padding: 1.5rem;
+  border-radius: 50%; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  flex-direction: row-reverse;
+  border-radius: 8px;
 }
 .display-none {
-  display: none;
+  display: none;  
 }
 /* This css is responsible for preventing body scrolling when the modal is opened */
 body.show {

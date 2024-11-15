@@ -1,0 +1,121 @@
+@import "global-style.css";
+
+
+body.enlarged {
+    background: #EEF6FD;
+
+}
+.content-page > .content {
+    background: #EEF6FD;
+}
+.card .card-body h3 span {
+    color: #EA9744;
+}
+.row .col-12 .card .card-body .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 33px;
+    background: #EEF6FD;
+    height: 175px;
+    overflow: hidden;
+}
+
+.row .col-12 .card .card-body .row .col {
+    width: 20%;
+    display: block;
+    height: 175px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.row .col-12 .card .card-body .row .col a {
+    display: block;
+    height: 175px;
+    border-radius: 8px;
+}
+.btn.btn-outline-primary.btn-rounded {
+
+    color: #F7931E;
+    border: 1px #F7931E solid;
+}
+.btn.btn-outline-primary.btn-rounded:hover {
+    background: #F7931E;
+    color: white;
+}
+button.btn.btn-primary.btn-block {
+    background: #F7931E;
+    box-shadow: none;
+    border: 1px #F7931E solid;
+    border-radius: 8px;
+}
+
+div > a.btn.btn-outline-primary {
+    border-radius: none !important;
+}
+
+ul.list-inline.mb-0.wizard.text-center {
+    display: none;
+}
+
+.card .card-widgets {
+    height: auto !important;
+}
+
+a.btn.btn-icon.btn-outline-info.btn-sm {
+    border: none;
+    color:  #3E4B62;    
+}
+a.btn.btn-icon.btn-outline-info.btn-sm:hover , 
+a.btn.btn-icon.btn-outline-danger.btn-sm:hover {
+    background-color: transparent;   
+}
+a.btn.btn-icon.btn-outline-danger.btn-sm {
+    border: none;
+    color:   #E81010; 
+}
+
+/* .row{
+    display: block !important;
+} */
+label.col-md-2.col-form-label {
+    font-size: 24px;
+    color: #232F43;
+    text-transform: uppercase;
+    width: 100%;
+    max-width: 100%;
+}
+div.d-flex.mt-2 {
+    display: block !important;
+}
+div.flex-grow-1.px-3 {
+    padding-left: 0 !important;
+}
+button.btn.btn-success.btn-sm {
+    width: 42px;
+    height: 42px;
+    border-radius: 8px;
+    background-color: #F7931E;
+    box-shadow: none;
+    border: none;
+    outline: none;
+}
+
+/* .tab-pane .btn-new {
+    background-color: red !important;
+} */
+
+button.btn-success.btn {
+    background-color: #F7931E;
+    box-shadow: none;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+button.btn.btn-primary.text-center {
+    background-color: #F7931E;
+    box-shadow: none;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}

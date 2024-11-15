@@ -47,8 +47,7 @@
 <!-- start on progress one by(Shaymaa)-->
 <link href="<?=base_url('assets/backend/css/app.min.css')?>" rel="stylesheet" type="text/css" />
 <!-- end on progress one by(Shaymaa)-->
-<link href="<?=base_url('assets/backend/css/icons.min.css')?>" rel="stylesheet" type="text/css" />
-
+<link href="<?=base_url('assets/backend/css/dashboardstyle/style.css')?>" rel="stylesheet" type="text/css" />
 <!-- start on progress tow by(Shaymaa) -->
 <link href="<?=base_url('assets/backend/css/main.css')?>" rel="stylesheet" type="text/css" />
 <!-- end on progress tow by(Shaymaa)-->

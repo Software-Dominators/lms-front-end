@@ -39,6 +39,8 @@
             <input value="<?php echo $bbb_meeting['viewer_pw'] ?? '' ?>" type="text" class="form-control" id="bbb_viewer_pw" placeholder="xxxxxxxxxx">
         </div>
 
+        <!-- col-md-12 -->
+
         <div class="form-group">
             <label for="bb_meeting_instruction"><?php echo get_phrase('Instructions for students'); ?></label>
             <textarea
@@ -60,13 +62,15 @@ Give some instructions to keep your students informed about the meeting</p>
 
     </div>
     <div class="col-md-12">
-        <div style ="text-align:right;" class="form-group ">
+        <div style ="text-align:right; display : flex; justify-content : end ; align-items : center; gap : 16px;" class="form-group ">
             
-            <button style="background:#FAF8F7 ;border-radius: 8px 0px 0px 0px;
-            border: 1px solid #F7931E ; color:#F7931E; max-width: 188px;"
+            
+            <button style="background: #F7931E;border-radius: 8px;
+            border: 1px solid #FAF8F7; color:#FAF8F7; width: 220px; height : 40px ; display : flex; justify-content : center ; align-items : center; box-shadow : none;" type="button" onclick="start_bbb_meeting()" class="btn btn-new  btn-success w-15"><?php echo get_phrase('Start Meeting'); ?></button>
+
+<button style="background:#FAF8F7 ;border-radius: 8px;
+            border: 1px solid #F7931E ; color:#F7931E; width: 220px; height : 40px ; display : flex; justify-content : center ; align-items : center; box-shadow : none;"
              type="button" onclick="save_bbb_meeting()" class="btn btn-info w-15 "><?php echo get_phrase('Save Meeting Info'); ?></button>
-            <button style="background: #F7931E;border-radius: 8px 0px 0px 0px;
-            border: 1px solid #FAF8F7; color:#FAF8F7; max-width: 188px;" type="button" onclick="start_bbb_meeting()" class="btn btn-success w-15"><?php echo get_phrase('Start Meeting'); ?></button>
         </div>
     </div>
 </div>
